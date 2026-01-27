@@ -47,7 +47,9 @@ export function parseError(error: unknown): ErrorInfo {
 
   // 3. Direct Zod errors
   if (isZodError(error)) {
-    const zodDetails = error.errors.map(err => `${err.path.join('.')}: ${err.message}`).join(', ')
+    const zodDetails = error.issues
+      .map((err: import('zod').ZodIssue) => `${err.path.join('.')}: ${err.message}`)
+      .join(', ')
 
     return {
       type: 'validation',

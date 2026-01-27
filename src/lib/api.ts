@@ -172,8 +172,8 @@ async function directApiRequest<T>(
           details: string
         }
         validationError.zodError = parseError
-        validationError.details = parseError.errors
-          .map(err => `${err.path.join('.')}: ${err.message}`)
+        validationError.details = parseError.issues
+          .map((err: z.ZodIssue) => `${err.path.join('.')}: ${err.message}`)
           .join(', ')
         throw validationError
       }

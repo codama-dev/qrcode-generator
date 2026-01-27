@@ -50,21 +50,21 @@ export const userProfileFormSchema = z.object({
     message: 'Username must be at least 2 characters.',
   }),
   email: z
-    .string({
-      required_error: 'Please enter an email address.',
+    .string()
+    .min(1, {
+      message: 'Please enter an email address.',
     })
     .email({
       message: 'Please enter a valid email address.',
     }),
   dateOfBirth: z.date({
-    required_error: 'A date of birth is required.',
+    message: 'A date of birth is required.',
   }),
   role: z.nativeEnum(UserRole, {
-    required_error: 'Please select a role.',
-    invalid_type_error: 'Please select a valid role.',
+    message: 'Please select a role.',
   }),
-  language: z.string({
-    required_error: 'Please select a language.',
+  language: z.string().min(1, {
+    message: 'Please select a language.',
   }),
   bio: z
     .string()
