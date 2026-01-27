@@ -1,0 +1,7 @@
+ess-frontend-ref-for-biome-lintstaged-husky-cspell/
+node_modules/
+dist/
+coverage/
+.husky/
+*.lock
+*.log

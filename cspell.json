@@ -1,0 +1,157 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "words": [
+    "axios",
+    "biome",
+    "boilerplate",
+    "cmdk",
+    "frontend",
+    "hookform",
+    "impasta",
+    "lucide",
+    "nums",
+    "radix",
+    "shadcn",
+    "sonner",
+    "tailwindcss",
+    "tanstack",
+    "Topbar",
+    "VITE",
+    "vitest",
+    "Vitest",
+    "WCAG",
+    "zod"
+  ],
+  "flagWords": [],
+  "ignorePaths": [
+    "node_modules/**",
+    "dist/**",
+    "coverage/**",
+    "pnpm-lock.yaml",
+    "*.log",
+    "*.lock",
+    ".git/**",
+    ".husky/**",
+    "**/*.svg",
+    "**/*.png",
+    "**/*.jpg",
+    "**/*.gif",
+    "**/*.ico",
+    "**/*.woff",
+    "**/*.woff2",
+    "**/*.ttf",
+    "**/*.eot"
+  ],
+  "files": [
+    "**/*.{ts,tsx,js,jsx,json,md,txt,html,css,scss,less}",
+    "!node_modules/**",
+    "!dist/**",
+    "!coverage/**"
+  ],
+  "enabledLanguageIds": [
+    "typescript",
+    "typescriptreact",
+    "javascript",
+    "javascriptreact",
+    "json",
+    "jsonc",
+    "markdown",
+    "text",
+    "html",
+    "css",
+    "scss",
+    "less"
+  ],
+  "allowCompoundWords": true,
+  "ignoreCase": false,
+  "caseSensitive": false,
+  "checkLimit": 500,
+  "minWordLength": 4,
+  "maxNumberOfProblems": 1000,
+  "numSuggestions": 8,
+  "suggestionsTimeout": 400,
+  "dictionaries": [
+    "typescript",
+    "node",
+    "html",
+    "css",
+    "bash",
+    "en_US",
+    "en-gb",
+    "companies",
+    "softwareTerms",
+    "misc"
+  ],
+  "dictionaryDefinitions": [
+    {
+      "name": "project-words",
+      "path": "./project-words.txt",
+      "description": "Project specific words"
+    }
+  ],
+  "languageSettings": [
+    {
+      "languageId": "typescript,typescriptreact,javascript,javascriptreact",
+      "ignoreRegExpList": [
+        "/\\b[A-Z]{2,}\\b/g",
+        "/\\b\\d+\\b/g",
+        "/import\\s+.*\\s+from\\s+['\"].*['\"];?/g",
+        "/require\\s*\\(['\"].*['\"]\\)/g"
+      ]
+    },
+    {
+      "languageId": "json,jsonc",
+      "ignoreRegExpList": ["/\"[^\"]*\":/g", "/\\b\\d+\\b/g"]
+    },
+    {
+      "languageId": "markdown",
+      "ignoreRegExpList": [
+        "/```[\\s\\S]*?```/g",
+        "/`[^`]*`/g",
+        "/\\[.*?\\]\\(.*?\\)/g",
+        "/https?:\\/\\/[^\\s)]+/g"
+      ]
+    }
+  ],
+  "overrides": [
+    {
+      "filename": "**/*.test.{ts,tsx,js,jsx}",
+      "words": [
+        "vitest",
+        "jsdom",
+        "testid",
+        "beforeeach",
+        "aftereach",
+        "beforeall",
+        "afterall",
+        "mocks",
+        "mockreturnvalue",
+        "spyOn",
+        "toBeInTheDocument",
+        "toHaveBeenCalled",
+        "toHaveBeenCalledWith",
+        "toHaveBeenCalledTimes",
+        "toHaveBeenInvokedWith"
+      ]
+    },
+    {
+      "filename": "**/*.config.{ts,js}",
+      "words": ["vite", "vitest", "rollup", "esbuild", "terser", "biome", "tailwindcss"]
+    },
+    {
+      "filename": "**/package.json",
+      "words": [
+        "authkit",
+        "radix",
+        "tanstack",
+        "hookform",
+        "tailwindcss",
+        "lucide",
+        "biomejs",
+        "vitejs",
+        "vitest"
+      ]
+    }
+  ]
+}
