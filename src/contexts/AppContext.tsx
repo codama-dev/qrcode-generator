@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react'
 import { createContext, useContext } from 'react'
 
-// biome-ignore lint/complexity/noBannedTypes: <This is an example for the boiler plate>
+// biome-ignore lint/complexity/noBannedTypes: App-level context type; extend as needed
 type AppContextType = {}
 
 const AppContext = createContext<AppContextType | undefined>(undefined)

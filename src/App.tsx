@@ -2,10 +2,7 @@ import { Navigate, Route, BrowserRouter as Router, Routes } from 'react-router-d
 import { Toaster } from '@/components/ui/sonner'
 import { AppProvider } from '@/contexts/AppContext'
 import { AppLayout } from '@/layout/AppLayout'
-import { ErrorHandlingPage } from '@/pages/ErrorHandlingPage'
-import { ExamplesPage } from '@/pages/ExamplesPage'
-import { HomePage } from '@/pages/HomePage'
-import { JokesPage } from '@/pages/JokesPage'
+import { QRGeneratorPage } from '@/pages/QRGeneratorPage'
 
 function App() {
   return (
@@ -13,10 +10,8 @@ function App() {
       <Router>
         <AppLayout>
           <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/examples" element={<ExamplesPage />} />
-            <Route path="/errors" element={<ErrorHandlingPage />} />
-            <Route path="/jokes" element={<JokesPage />} />
+            <Route path="/" element={<QRGeneratorPage />} />
+            <Route path="/generator" element={<QRGeneratorPage />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </AppLayout>

@@ -1,12 +1,7 @@
 import axios, { type AxiosError, type AxiosRequestConfig } from 'axios'
 import { z } from 'zod'
 import { API_BASE_URL } from '@/lib/config'
-import {
-  apiResponseSchema,
-  genericEnvelopeSchema,
-  jokeArraySchema,
-  singleJokeSchema,
-} from '@/lib/schemas'
+import { apiResponseSchema, genericEnvelopeSchema } from '@/lib/schemas'
 import { ContentType, HTTPHeader, HTTPStatusCodes } from '@/lib/types'
 
 enum HTTPMethod {
@@ -147,114 +142,5 @@ export async function apiRequest<T>(
   }
 }
 
-// Simple API request for direct responses (no envelope)
-async function directApiRequest<T>(
-  endpoint: string,
-  responseSchema: z.ZodSchema<T>,
-  options: AxiosRequestConfig = {}
-): Promise<T> {
-  try {
-    const response = await apiClient({
-      url: endpoint,
-      method: HTTPMethod.GET,
-      ...options,
-    })
-
-    const json = response.data
-    try {
-      const result = responseSchema.parse(json)
-      return result
-    } catch (parseError) {
-      if (parseError instanceof z.ZodError) {
-        // Create a custom ValidationError for better error handling
-        const validationError = new Error('Response validation failed') as Error & {
-          zodError: z.ZodError
-          details: string
-        }
-        validationError.zodError = parseError
-        validationError.details = parseError.issues
-          .map((err: z.ZodIssue) => `${err.path.join('.')}: ${err.message}`)
-          .join(', ')
-        throw validationError
-      }
-      throw parseError
-    }
-  } catch (error) {
-    // Handle axios errors
-    if (axios.isAxiosError(error)) {
-      const axiosError = error as AxiosError
-      if (axiosError.response?.data) {
-        // Try to parse error response
-        const errorData = axiosError.response.data as Record<string, unknown>
-        throw new ApiError(
-          (typeof errorData.message === 'string' ? errorData.message : null) ||
-            axiosError.message ||
-            'Request failed',
-          {
-            status: axiosError.response.status,
-            details:
-              typeof errorData.error === 'string'
-                ? errorData.error
-                : typeof errorData.details === 'string'
-                  ? errorData.details
-                  : undefined,
-          }
-        )
-      }
-    }
-
-    // Re-throw if it's already an ApiError
-    if (error instanceof ApiError) {
-      throw error
-    }
-
-    // Handle unknown errors
-    throw new ApiError('An unexpected error occurred', {
-      status: HTTPStatusCodes.INTERNAL_SERVER_ERROR_500,
-    })
-  }
-}
-
-// Official Joke API functions
-export const jokeApi = {
-  // Get a random joke
-  getRandomJoke: async () => {
-    return directApiRequest('/random_joke', singleJokeSchema, {
-      method: HTTPMethod.GET,
-    })
-  },
-
-  // Get ten random jokes
-  getRandomTen: async () => {
-    return directApiRequest('/random_ten', jokeArraySchema, {
-      method: HTTPMethod.GET,
-    })
-  },
-
-  // Alternative endpoint for random joke
-  getJokeRandom: async () => {
-    return directApiRequest('/jokes/random', singleJokeSchema, {
-      method: HTTPMethod.GET,
-    })
-  },
-
-  // Alternative endpoint for ten jokes
-  getJokesTen: async () => {
-    return directApiRequest('/jokes/ten', jokeArraySchema, {
-      method: HTTPMethod.GET,
-    })
-  },
-
-  // Get jokes by type/category (if supported by API)
-  getJokesByType: async (type: string) => {
-    return directApiRequest(`/jokes/${type}/random`, singleJokeSchema, {
-      method: HTTPMethod.GET,
-    })
-  },
-}
-
-// Export the API client for backward compatibility and direct usage
+// Export the API client for direct usage when a backend is added
 export const api = apiClient
-
-// Export default as the joke API for clean imports
-export default jokeApi

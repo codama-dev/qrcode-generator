@@ -1,13 +1,3 @@
-// Joke API Data Types
-export interface Joke {
-  type: string
-  setup: string
-  punchline: string
-  id: number
-}
-
-export interface JokeApiResponse extends Array<Joke> {}
-
 // Generic API Response Types
 export interface ApiResponse<T> {
   success: boolean
@@ -22,19 +12,6 @@ export interface PaginatedResponse<T> {
   page: number
   pageSize: number
   totalPages: number
-}
-
-// Filter types for joke categories
-export type JokeCategory = 'general' | 'programming' | 'dad' | 'knock-knock'
-export type JokeFilter = 'all' | JokeCategory
-
-// User Role enum
-export enum UserRole {
-  DEVELOPER = 'developer',
-  DESIGNER = 'designer',
-  MANAGER = 'manager',
-  ANALYST = 'analyst',
-  OTHER = 'other',
 }
 
 // HTTP Utility Types - reusable across projects

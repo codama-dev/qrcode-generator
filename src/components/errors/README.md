@@ -1,6 +1,6 @@
 # Centralized Error Handling System
 
-This boilerplate includes a comprehensive, reusable error handling system that automatically categorizes and displays errors consistently across your application.
+This app includes a reusable error handling system that categorizes and displays errors consistently across the application.
 
 ## Features
 

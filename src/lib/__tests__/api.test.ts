@@ -74,46 +74,6 @@ describe('API Layer', () => {
       const { API_BASE_URL } = await import('../config')
 
       expect(typeof API_BASE_URL).toBe('string')
-      expect(API_BASE_URL).toBeTruthy()
-    })
-
-    it('should have JOKE_API_BASE_URL configured', async () => {
-      const { JOKE_API_BASE_URL } = await import('../config')
-
-      expect(JOKE_API_BASE_URL).toBe('https://official-joke-api.appspot.com')
-    })
-  })
-
-  describe('Schema Integration', () => {
-    it('should import joke schemas correctly', async () => {
-      const { jokeSchema, jokeArraySchema } = await import('../schemas')
-
-      expect(jokeSchema).toBeDefined()
-      expect(jokeArraySchema).toBeDefined()
-
-      // Test valid joke data
-      const validJoke = {
-        id: 1,
-        type: 'general',
-        setup: 'Why?',
-        punchline: 'Because!',
-      }
-
-      expect(() => jokeSchema.parse(validJoke)).not.toThrow()
-      expect(() => jokeArraySchema.parse([validJoke])).not.toThrow()
-    })
-
-    it('should reject invalid joke data', async () => {
-      const { jokeSchema } = await import('../schemas')
-
-      const invalidJoke = {
-        id: 'not-a-number',
-        type: 'general',
-        setup: 'Why?',
-        // missing punchline
-      }
-
-      expect(() => jokeSchema.parse(invalidJoke)).toThrow()
     })
   })
 })
