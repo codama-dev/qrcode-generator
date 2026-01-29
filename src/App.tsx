@@ -2,6 +2,7 @@ import { Navigate, Route, BrowserRouter as Router, Routes } from 'react-router-d
 import { Toaster } from '@/components/ui/sonner'
 import { AppProvider } from '@/contexts/AppContext'
 import { AppLayout } from '@/layout/AppLayout'
+import { AboutPage } from '@/pages/AboutPage'
 import { QRGeneratorPage } from '@/pages/QRGeneratorPage'
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
           <Routes>
             <Route path="/" element={<QRGeneratorPage />} />
             <Route path="/generator" element={<QRGeneratorPage />} />
+            <Route path="/about" element={<AboutPage />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </AppLayout>

@@ -1,0 +1,246 @@
+{
+  "app": {
+    "title": "QR-Code-Generator",
+    "tagline": "QR-Codes für URLs, Texte und mehr erstellen."
+  },
+  "pageHeader": {
+    "badge": "Sofortige, hochwertige QR-Codes",
+    "title": "100% KOSTENLOS Design-orientierter QR-Code-Generator",
+    "subtitle": "100% kostenlos—keine Anmeldung, keine Limits. Erstellen Sie markenorientierte QR-Codes mit anpassbaren Farben, Stilen und Logos—bereit für Druck oder Digital in Sekunden."
+  },
+  "common": {
+    "generate": "QR-Code erstellen",
+    "download": "Download",
+    "preview": "Vorschau & Download",
+    "previewDescription": "Ihr QR-Code, immer aktuell.",
+    "waitingForContent": "Warte auf Inhalt",
+    "viewFullSize": "Vollständige Größe anzeigen",
+    "viewFullPreview": "Vollständige QR-Code-Vorschau anzeigen",
+    "size": "Größe",
+    "style": "Stil",
+    "errorCorrection": "Fehlerkorrektur",
+    "contentType": "Inhaltstyp",
+    "type": "Typ",
+    "angle": "Winkel",
+    "colors": "Farben",
+    "linear": "Linear",
+    "radial": "Radial",
+    "none": "Keine",
+    "standard": "Standard",
+    "small": "Klein",
+    "medium": "Mittel",
+    "large": "Groß",
+    "extraLarge": "Extra groß",
+    "downloadSuccess": "{{format}} heruntergeladen"
+  },
+  "preview": {
+    "ariaEmpty": "QR-Code-Vorschau",
+    "ariaFor": "QR-Code-Vorschau für {{content}}"
+  },
+  "errors": {
+    "pngExportFailed": "PNG-Export fehlgeschlagen. Versuchen Sie SVG oder ein Logo von derselben Quelle.",
+    "jpgExportFailed": "JPG-Export fehlgeschlagen. Versuchen Sie PNG oder SVG.",
+    "pdfExportFailed": "PDF-Export fehlgeschlagen. Versuchen Sie PNG oder SVG.",
+    "svgExportFailed": "SVG-Export fehlgeschlagen. Logo-URL prüfen oder anderes Bild verwenden.",
+    "imageLoadFailed": "Bild konnte nicht geladen werden. URL prüfen oder anderes Bild verwenden."
+  },
+  "sections": {
+    "qrContent": {
+      "title": "QR-Inhalt",
+      "description": "Wählen Sie, worauf Ihr QR-Code verweisen soll, und passen Sie die Nachricht an."
+    },
+    "colors": {
+      "title": "Farben",
+      "description": "Vordergrund- und Hintergrundfarben für Ihre Marke einstellen.",
+      "foreground": "Vordergrund",
+      "background": "Hintergrund",
+      "useGradient": "Verlauf verwenden",
+      "toggleForegroundGradient": "Vordergrundverlauf ein/aus",
+      "toggleBackgroundGradient": "Hintergrundverlauf ein/aus",
+      "foregroundColorPicker": "Vordergrundfarbwähler",
+      "backgroundColorPicker": "Hintergrundfarbwähler",
+      "foregroundLabel": "Vordergrund",
+      "backgroundLabel": "Hintergrund",
+      "foregroundModules": "Farbe der QR-Module.",
+      "backgroundQuietZone": "Farbe des Hintergrunds und der Ruhezone.",
+      "foregroundGradientStart": "Startfarbe Vordergrundverlauf",
+      "foregroundGradientEnd": "Endfarbe Vordergrundverlauf",
+      "backgroundGradientStart": "Startfarbe Hintergrundverlauf",
+      "backgroundGradientEnd": "Endfarbe Hintergrundverlauf"
+    },
+    "style": {
+      "title": "QR-Stil",
+      "description": "Wechseln Sie zwischen klassischen Quadraten, abgerundeten Modulen, Punkten und erweiterten Balken-/Lückenstilen.",
+      "moduleStyle": "Modulstil",
+      "level": "Level",
+      "levelPlaceholder": "Level",
+      "higherLevels": "Höhere Level ermöglichen mehr Schadenswiederherstellung.",
+      "styleDescription": "Quadrate bieten maximale Klarheit; Lücken- und Balkenstile eignen sich am besten bei mittlerer oder größerer Größe mit höherer Fehlerkorrektur."
+    },
+    "quality": {
+      "title": "Qualität & Größe",
+      "description": "Wählen Sie Detailstufe und Größe für Ihren Anwendungsfall—von schnellen Tests bis druckfertig.",
+      "detailLevel": "Detailstufe",
+      "outputSize": "Ausgabegröße",
+      "sizePreset": "Größenvoreinstellung",
+      "customSizePixels": "Benutzerdefinierte Größe (Pixel)",
+      "customSizeHint": "Min. 64px, max. 2048px. Größere Formate eignen sich für den Druck.",
+      "outputSizeDescription": "Steuert die endgültigen Pixelabmessungen des QR-Codes.",
+      "quietZone": "Ruhezone (Rand)",
+      "quietZonePlaceholder": "Ruhezone",
+      "quietZoneDescription": "Abstand um den QR-Code in Modulen. Standard ist 4 für die meisten Scanner.",
+      "detailLow": "Niedrig",
+      "detailMedium": "Mittel",
+      "detailHigh": "Hoch",
+      "detailUltra": "Ultra",
+      "detailLowDesc": "Maximale Datenmenge",
+      "detailMediumDesc": "Ausgewogen",
+      "detailHighDesc": "Gut für Logos",
+      "detailUltraDesc": "Maximale Zuverlässigkeit",
+      "quietZoneNone": "Keine",
+      "quietZoneMinimal": "Minimal (2)",
+      "quietZoneStandard": "Standard (4)",
+      "quietZoneLarge": "Groß (6)",
+      "quietZoneExtraLarge": "Extra groß (8)"
+    },
+    "logo": {
+      "title": "Logo (optional)",
+      "description": "Fügen Sie ein mittiges Logo für vollständig markenorientierte Codes ein. M- oder H-Fehlerkorrektur verwenden.",
+      "addCenterImage": "Mittelbild hinzufügen",
+      "addCenterImageDesc": "Optionales Logo oder Symbol in der Mitte Ihres QR-Codes.",
+      "imageUrl": "Bild-URL",
+      "imageUrlPlaceholder": "https://example.com/logo.png",
+      "imageUrlDesc": "URL des Bildes für die Mitte.",
+      "orUpload": "Oder hochladen",
+      "fileSelected": "Datei ausgewählt. Ersetzen Sie sie durch eine andere Datei oder eine Bild-URL.",
+      "logoSize": "Logogröße",
+      "logoSizeStandard": "Standard",
+      "logoSizeSmall": "Klein",
+      "logoSizeHint": "Klein hält das Logo kompakt (≈12 % der QR-Größe) für maximale Scan-Zuverlässigkeit."
+    }
+  },
+  "qrTypes": {
+    "label": "QR-Code-Typ",
+    "url": "URL",
+    "urlHelper": "Links zu Websites oder Apps",
+    "text": "Text",
+    "textHelper": "Kurze Nachricht oder Notiz",
+    "wifi": "WLAN",
+    "wifiHelper": "Mit WLAN-Netz verbinden",
+    "vcard": "vCard",
+    "vcardHelper": "Kontaktkarte speichern",
+    "email": "E-Mail",
+    "emailHelper": "E-Mail-Entwurf öffnen",
+    "phone": "Telefon",
+    "phoneHelper": "Telefonnummer anrufen",
+    "sms": "SMS",
+    "smsHelper": "Vorausgefüllte SMS senden",
+    "whatsapp": "WhatsApp",
+    "whatsappHelper": "WhatsApp-Chat starten",
+    "facebook": "Facebook",
+    "facebookHelper": "Facebook-Profil oder -Seite öffnen",
+    "instagram": "Instagram",
+    "instagramHelper": "Instagram-Profil öffnen",
+    "location": "Standort",
+    "locationHelper": "Pin in Karten öffnen",
+    "bitcoin": "Bitcoin",
+    "bitcoinHelper": "Bitcoin-Zahlung anfordern"
+  },
+  "forms": {
+    "textContent": "Textinhalt",
+    "textPlaceholder": "Längere Nachricht, Notiz oder Anweisungen",
+    "urlLabel": "URL",
+    "urlPlaceholder": "https://example.com"
+  },
+  "theme": {
+    "toggle": "Design umschalten",
+    "light": "Hell",
+    "dark": "Dunkel",
+    "system": "System"
+  },
+  "sizeLabels": {
+    "small": "Klein",
+    "medium": "Mittel",
+    "large": "Groß",
+    "xlarge": "Extra groß",
+    "custom": "Benutzerdefiniert"
+  },
+  "styleLabels": {
+    "squares": "Quadrate",
+    "rounded": "Abgerundet",
+    "dots": "Punkte",
+    "gapped": "Mit Lücken",
+    "vertical": "Vertikal",
+    "horizontal": "Horizontal"
+  },
+  "footer": {
+    "createdWith": "Erstellt mit",
+    "freeBy": "100 % kostenlos für die Community von"
+  },
+  "language": {
+    "label": "Sprache",
+    "en": "English",
+    "de": "Deutsch",
+    "es": "Español",
+    "he": "עברית"
+  },
+  "nav": {
+    "menu": "Menü",
+    "home": "Start",
+    "about": "Über uns",
+    "getAQuote": "Angebot anfragen",
+    "openMenu": "Menü öffnen",
+    "closeMenu": "Menü schließen"
+  },
+  "about": {
+    "intro": "Diese Seite wurde vom Codama-Team erstellt. Wir sind eine Software-Agentur, die digitale Produkte entwickelt und Unternehmen beim Wachstum unterstützt. Wir arbeiten mit Startups und etablierten Unternehmen zusammen und liefern Web- und Mobile-Apps, Automatisierung und Datenlösungen. Unten erfahren Sie mehr über unsere Arbeit und unsere Vorgehensweise.",
+    "hero": {
+      "title": "Wir setzen Ihre digitale Vision um. Smart, skalierbar und startklar.",
+      "subtitle": "Wir entwickeln mit Ihnen maßgeschneiderte Lösungen, die Ihr Geschäft voranbringen. Es geht um mehr als Code—es ist eine echte Partnerschaft."
+    },
+    "getAQuote": "Angebot anfragen",
+    "qrCodeGenerator": "QR-Code-Generator",
+    "ourServices": "Unsere Leistungen",
+    "services": {
+      "webApps": {
+        "title": "Web-Anwendungen",
+        "description": "Wir entwickeln maßgeschneiderte Web-Anwendungen, die schnell, zuverlässig und benutzerfreundlich sind. Unser Team setzt moderne Tools ein, damit Ihre App auf allen Geräten optimal läuft, reibungslos funktioniert und mit Ihrem Unternehmen mitwächst.",
+        "tag1": "Responsives Design",
+        "tag2": "Moderner Stack",
+        "tag3": "Hohe Performance"
+      },
+      "mobile": {
+        "title": "Mobile Anwendungen",
+        "description": "Wir entwerfen und entwickeln mobile Apps, die zu Ihren Geschäftszielen passen. Ob für iOS, Android oder beides—wir legen Wert auf Nutzererlebnis, Performance und langfristige Flexibilität, damit Ihr Produkt von Tag eins stimmig ist.",
+        "tag1": "Nativ & plattformübergreifend",
+        "tag2": "Intuitive UX",
+        "tag3": "Skalierbare Architektur"
+      },
+      "automation": {
+        "title": "Automatisierung & KI-Integration",
+        "description": "Wir helfen Ihnen, Zeit zu sparen und effizienter zu arbeiten—durch KI-Tools und Automatisierung. Von einfacher Aufgaben-Automatisierung bis zu vollständigen KI-Workflows machen wir Ihre Systeme schneller, einfacher und effizienter.",
+        "tag1": "Prozessautomatisierung",
+        "tag2": "KI-Tools",
+        "tag3": "Workflow-Effizienz"
+      },
+      "dataBi": {
+        "title": "Daten & BI-Lösungen",
+        "description": "Wir verwandeln Ihre Geschäftsdaten in klare Erkenntnisse, auf die Sie handeln können. Vom Aufbau von Dashboards bis zur Anbindung von Datenbanken helfen wir Ihnen mit Tools wie Power BI, Looker Studio und Google Sheets, fundierte Entscheidungen zu treffen.",
+        "tag1": "Individuelle Dashboards",
+        "tag2": "Plattform-Integration",
+        "tag3": "Umsetzbare Erkenntnisse"
+      },
+      "businessWebsites": {
+        "title": "Unternehmens-Websites",
+        "description": "Wir erstellen moderne, leicht zu pflegende WordPress-Websites, die auf jedem Gerät gut aussehen und funktionieren. Ob Landingpage oder komplette Website—wir bauen mit Fokus auf SEO und Usability, damit Ihr Unternehmen den richtigen ersten Eindruck hinterlässt.",
+        "tag1": "WordPress-Experten",
+        "tag2": "Geschäftsbereit",
+        "tag3": "SEO-freundlich"
+      }
+    },
+    "whyChoose": {
+      "title": "Warum Codama",
+      "quote": "Sie kennen Ihr Geschäft am besten. Darum hören wir zu—und tauchen dann in Ihre Branche ein, um Ihre Zielgruppe und Ziele wirklich zu verstehen."
+    }
+  }
+}

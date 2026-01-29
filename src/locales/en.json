@@ -1,0 +1,246 @@
+{
+  "app": {
+    "title": "QR Code Generator",
+    "tagline": "Create QR codes for URLs, texts and more"
+  },
+  "pageHeader": {
+    "badge": "Instant, high-quality QR codes",
+    "title": "100% FREE Design-forward QR code generator",
+    "subtitle": "100% free—no signup, no limits. Generate branded QR codes with customizable colors, styles, and logos—ready for print or digital in seconds."
+  },
+  "common": {
+    "generate": "Generate QR code",
+    "download": "Download",
+    "preview": "Preview & Download",
+    "previewDescription": "Your QR code, always up to date.",
+    "waitingForContent": "Waiting for content",
+    "viewFullSize": "View Full Size",
+    "viewFullPreview": "View full QR code preview",
+    "size": "Size",
+    "style": "Style",
+    "errorCorrection": "Error correction",
+    "contentType": "Content type",
+    "type": "Type",
+    "angle": "Angle",
+    "colors": "Colors",
+    "linear": "Linear",
+    "radial": "Radial",
+    "none": "None",
+    "standard": "Standard",
+    "small": "Small",
+    "medium": "Medium",
+    "large": "Large",
+    "extraLarge": "Extra Large",
+    "downloadSuccess": "{{format}} downloaded"
+  },
+  "preview": {
+    "ariaEmpty": "QR code preview",
+    "ariaFor": "QR code preview for {{content}}"
+  },
+  "errors": {
+    "pngExportFailed": "PNG export failed. Try SVG or use a same-origin logo.",
+    "jpgExportFailed": "JPG export failed. Try PNG or SVG instead.",
+    "pdfExportFailed": "PDF export failed. Try PNG or SVG instead.",
+    "svgExportFailed": "SVG export failed. Check logo URL or try another image.",
+    "imageLoadFailed": "Image failed to load. Check URL or try another image."
+  },
+  "sections": {
+    "qrContent": {
+      "title": "QR content",
+      "description": "Choose what your QR code should point to, then customize the message."
+    },
+    "colors": {
+      "title": "Colors",
+      "description": "Dial in foreground and background colors that match your brand.",
+      "foreground": "Foreground",
+      "background": "Background",
+      "useGradient": "Use gradient",
+      "toggleForegroundGradient": "Toggle foreground gradient",
+      "toggleBackgroundGradient": "Toggle background gradient",
+      "foregroundColorPicker": "Foreground color picker",
+      "backgroundColorPicker": "Background color picker",
+      "foregroundLabel": "Foreground",
+      "backgroundLabel": "Background",
+      "foregroundModules": "Color of QR modules.",
+      "backgroundQuietZone": "Color of the background and quiet zone.",
+      "foregroundGradientStart": "Foreground gradient start color",
+      "foregroundGradientEnd": "Foreground gradient end color",
+      "backgroundGradientStart": "Background gradient start color",
+      "backgroundGradientEnd": "Background gradient end color"
+    },
+    "style": {
+      "title": "QR style",
+      "description": "Switch between dots, classic squares, rounded modules, and advanced bar/gap styles.",
+      "moduleStyle": "Module style",
+      "level": "Level",
+      "levelPlaceholder": "Level",
+      "higherLevels": "Higher levels allow more damage recovery.",
+      "styleDescription": "Squares offer maximum clarity; gapped and bar styles work best at medium or larger sizes with higher error correction."
+    },
+    "quality": {
+      "title": "Quality & size",
+      "description": "Pick a detail level and size that fits your use case—from quick tests to print-ready.",
+      "detailLevel": "Detail level",
+      "outputSize": "Output size",
+      "sizePreset": "Size preset",
+      "customSizePixels": "Custom size (pixels)",
+      "customSizeHint": "Min 64px, max 2048px. Larger sizes are best for print.",
+      "outputSizeDescription": "Controls the final pixel dimensions of the QR.",
+      "quietZone": "Quiet zone (margin)",
+      "quietZonePlaceholder": "Quiet zone",
+      "quietZoneDescription": "Spacing around the QR code in modules. Standard is 4 for most scanners.",
+      "detailLow": "Low",
+      "detailMedium": "Medium",
+      "detailHigh": "High",
+      "detailUltra": "Ultra",
+      "detailLowDesc": "Maximum data",
+      "detailMediumDesc": "Balanced",
+      "detailHighDesc": "Good for logos",
+      "detailUltraDesc": "Max reliability",
+      "quietZoneNone": "None",
+      "quietZoneMinimal": "Minimal (2)",
+      "quietZoneStandard": "Standard (4)",
+      "quietZoneLarge": "Large (6)",
+      "quietZoneExtraLarge": "Extra Large (8)"
+    },
+    "logo": {
+      "title": "Logo (optional)",
+      "description": "Drop in a center logo for fully branded codes. Use M or H error correction.",
+      "addCenterImage": "Add center image",
+      "addCenterImageDesc": "Optional logo or icon in the center of your QR code.",
+      "imageUrl": "Image URL",
+      "imageUrlPlaceholder": "https://example.com/logo.png",
+      "imageUrlDesc": "URL of the image to place in the center.",
+      "orUpload": "Or upload",
+      "fileSelected": "File selected. Replace it by choosing another file or using an image URL.",
+      "logoSize": "Logo size",
+      "logoSizeStandard": "Standard",
+      "logoSizeSmall": "Small",
+      "logoSizeHint": "Small keeps the logo compact (≈12% of QR size) for maximum scan reliability."
+    }
+  },
+  "qrTypes": {
+    "label": "QR code type",
+    "url": "URL",
+    "urlHelper": "Links to websites or apps",
+    "text": "Text",
+    "textHelper": "Any short message or note",
+    "wifi": "WiFi",
+    "wifiHelper": "Connect to a WiFi network",
+    "vcard": "vCard",
+    "vcardHelper": "Save a contact card",
+    "email": "Email",
+    "emailHelper": "Open an email draft",
+    "phone": "Phone",
+    "phoneHelper": "Tap-to-call phone number",
+    "sms": "SMS",
+    "smsHelper": "Send a pre-filled SMS",
+    "whatsapp": "WhatsApp",
+    "whatsappHelper": "Start a WhatsApp chat",
+    "facebook": "Facebook",
+    "facebookHelper": "Open a Facebook profile or page",
+    "instagram": "Instagram",
+    "instagramHelper": "Open an Instagram profile",
+    "location": "Location",
+    "locationHelper": "Open a pin in maps",
+    "bitcoin": "Bitcoin",
+    "bitcoinHelper": "Request a Bitcoin payment"
+  },
+  "forms": {
+    "textContent": "Text content",
+    "textPlaceholder": "Longer message, note, or instructions",
+    "urlLabel": "URL",
+    "urlPlaceholder": "https://example.com"
+  },
+  "theme": {
+    "toggle": "Toggle theme",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  },
+  "sizeLabels": {
+    "small": "Small",
+    "medium": "Medium",
+    "large": "Large",
+    "xlarge": "X-Large",
+    "custom": "Custom"
+  },
+  "styleLabels": {
+    "squares": "Squares",
+    "rounded": "Rounded",
+    "dots": "Dots",
+    "gapped": "Gapped",
+    "vertical": "Vertical",
+    "horizontal": "Horizontal"
+  },
+  "footer": {
+    "createdWith": "Created with",
+    "freeBy": "100% free for the community by"
+  },
+  "language": {
+    "label": "Language",
+    "en": "English",
+    "de": "Deutsch",
+    "es": "Español",
+    "he": "עברית"
+  },
+  "nav": {
+    "menu": "Menu",
+    "home": "Home",
+    "about": "About",
+    "getAQuote": "Get a Quote",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "about": {
+    "intro": "This page was created by the Codama team. We are a software agency that builds digital products and helps businesses grow. We work with startups and established companies to deliver web and mobile apps, automation, and data solutions. Below you can learn more about what we do and how we work.",
+    "hero": {
+      "title": "We bring your digital vision to life. Smart, scalable, and ready to launch.",
+      "subtitle": "We work with you to build custom solutions that help your business grow. It's more than code; it's a real partnership."
+    },
+    "getAQuote": "Get a Quote",
+    "qrCodeGenerator": "QR Code Generator",
+    "ourServices": "Our Services",
+    "services": {
+      "webApps": {
+        "title": "Web Applications",
+        "description": "We build custom web applications that are fast, reliable, and user-friendly. Our team utilizes modern tools to ensure your app functions optimally on all devices, runs smoothly, and is designed to scale with your business.",
+        "tag1": "Responsive Design",
+        "tag2": "Modern Stack",
+        "tag3": "High Performance"
+      },
+      "mobile": {
+        "title": "Mobile Applications",
+        "description": "We design and develop mobile apps that match your business goals. Whether it's for iOS, Android, or both, we focus on user experience, performance, and long-term flexibility so your product feels right from day one.",
+        "tag1": "Native & Cross-Platform",
+        "tag2": "Intuitive UX",
+        "tag3": "Scalable Architecture"
+      },
+      "automation": {
+        "title": "Automation & AI Integration",
+        "description": "We help you save time and work smarter by adding AI tools and automation to your business. From simple task automation to complete AI workflows, we make your systems faster, easier, and more efficient.",
+        "tag1": "Process Automation",
+        "tag2": "AI Tools",
+        "tag3": "Workflow Efficiency"
+      },
+      "dataBi": {
+        "title": "Data & BI Solutions",
+        "description": "We turn your business data into clear insights you can act on. From building dashboards to setting up database connections, we help you make smart decisions with tools like Power BI, Looker Studio, and Google Sheets.",
+        "tag1": "Custom Dashboards",
+        "tag2": "Platform Integration",
+        "tag3": "Actionable Insights"
+      },
+      "businessWebsites": {
+        "title": "Business Websites",
+        "description": "We create modern, easy-to-manage WordPress websites that look great and work well on any device. Whether it's a landing page or a whole site, we build with SEO and usability in mind so your business makes the right first impression.",
+        "tag1": "WordPress Experts",
+        "tag2": "Business-Ready",
+        "tag3": "SEO Friendly"
+      }
+    },
+    "whyChoose": {
+      "title": "Why choose Codama",
+      "quote": "You know your business best. That's why we start by listening—then we dig into your industry to fully understand your audience and goals."
+    }
+  }
+}

@@ -1,0 +1,246 @@
+{
+  "app": {
+    "title": "מחולל QR-Code",
+    "tagline": "צור QR-Code לכתובות, טקסטים ועוד"
+  },
+  "pageHeader": {
+    "badge": "QR-Code מיידיים ואיכותיים",
+    "title": "100% חינם מחולל QR-Code מודרני",
+    "subtitle": "100% חינם—בלי הרשמה, בלי הגבלות. צור QR-Code עם המותג שלך: צבעים, סגנונות ולוגואים מותאמים—מוכנים להדפסה או דיגיטל תוך שניות."
+  },
+  "common": {
+    "generate": "צור קוד QR",
+    "download": "הורד",
+    "preview": "תצוגה מקדימה והורדה",
+    "previewDescription": "קוד ה-QR שלך, תמיד מעודכן.",
+    "waitingForContent": "מחכה לתוכן",
+    "viewFullSize": "צפה בגודל מלא",
+    "viewFullPreview": "צפה בתצוגה מקדימה מלאה של קוד QR",
+    "size": "גודל",
+    "style": "סגנון",
+    "errorCorrection": "תיקון שגיאות",
+    "contentType": "סוג תוכן",
+    "type": "סוג",
+    "angle": "זווית",
+    "colors": "צבעים",
+    "linear": "ליניארי",
+    "radial": "רדיאלי",
+    "none": "ללא",
+    "standard": "סטנדרטי",
+    "small": "קטן",
+    "medium": "בינוני",
+    "large": "גדול",
+    "extraLarge": "גדול מאוד",
+    "downloadSuccess": "{{format}} הורד"
+  },
+  "preview": {
+    "ariaEmpty": "תצוגה מקדימה של קוד QR",
+    "ariaFor": "תצוגה מקדימה של קוד QR עבור {{content}}"
+  },
+  "errors": {
+    "pngExportFailed": "ייצוא PNG נכשל. נסה SVG או לוגו מאותו מקור.",
+    "jpgExportFailed": "ייצוא JPG נכשל. נסה PNG או SVG.",
+    "pdfExportFailed": "ייצוא PDF נכשל. נסה PNG או SVG.",
+    "svgExportFailed": "ייצוא SVG נכשל. בדוק את כתובת הלוגו או נסה תמונה אחרת.",
+    "imageLoadFailed": "טעינת התמונה נכשלה. בדוק את הכתובת או נסה תמונה אחרת."
+  },
+  "sections": {
+    "qrContent": {
+      "title": "תוכן ה-QR",
+      "description": "בחר למה קוד ה-QR שלך צריך להצביע והתאם את ההודעה."
+    },
+    "colors": {
+      "title": "צבעים",
+      "description": "התאם צבעי רקע וחזית שמתאימים למותג שלך.",
+      "foreground": "חזית",
+      "background": "רקע",
+      "useGradient": "השתמש במעבר צבעים",
+      "toggleForegroundGradient": "הפעל/כבה מעבר צבעים בחזית",
+      "toggleBackgroundGradient": "הפעל/כבה מעבר צבעים ברקע",
+      "foregroundColorPicker": "בורר צבע חזית",
+      "backgroundColorPicker": "בורר צבע רקע",
+      "foregroundLabel": "חזית",
+      "backgroundLabel": "רקע",
+      "foregroundModules": "צבע מודולי ה-QR.",
+      "backgroundQuietZone": "צבע הרקע ואזור השקט.",
+      "foregroundGradientStart": "צבע התחלת מעבר החזית",
+      "foregroundGradientEnd": "צבע סיום מעבר החזית",
+      "backgroundGradientStart": "צבע התחלת מעבר הרקע",
+      "backgroundGradientEnd": "צבע סיום מעבר הרקע"
+    },
+    "style": {
+      "title": "סגנון ה-QR",
+      "description": "החלף בין ריבועים קלאסיים, מודולים מעוגלים, נקודות וסגנונות פסים/רווחים.",
+      "moduleStyle": "סגנון מודולים",
+      "level": "רמה",
+      "levelPlaceholder": "רמה",
+      "higherLevels": "רמות גבוהות יותר מאפשרות שחזור נזקים טוב יותר.",
+      "styleDescription": "ריבועים מציעים בהירות מקסימלית; סגנונות רווחים ופסים עובדים הכי טוב בגודל בינוני או גדול עם תיקון שגיאות גבוה."
+    },
+    "quality": {
+      "title": "איכות וגודל",
+      "description": "בחר רמת פירוט וגודל שמתאימים לשימוש שלך—מבדיקות מהירות להדפסה.",
+      "detailLevel": "רמת פירוט",
+      "outputSize": "גודל פלט",
+      "sizePreset": "גודל מוגדר",
+      "customSizePixels": "גודל מותאם (פיקסלים)",
+      "customSizeHint": "מינימום 64px, מקסימום 2048px. גדלים גדולים מתאימים להדפסה.",
+      "outputSizeDescription": "שולט בממדי הפיקסל הסופיים של ה-QR.",
+      "quietZone": "אזור שקט (שוליים)",
+      "quietZonePlaceholder": "אזור שקט",
+      "quietZoneDescription": "ריווח סביב קוד ה-QR במודולים. סטנדרט הוא 4 לרוב הסורקים.",
+      "detailLow": "נמוך",
+      "detailMedium": "בינוני",
+      "detailHigh": "גבוה",
+      "detailUltra": "אולטרה",
+      "detailLowDesc": "מקסימום נתונים",
+      "detailMediumDesc": "מאוזן",
+      "detailHighDesc": "טוב ללוגואים",
+      "detailUltraDesc": "אמינות מקסימלית",
+      "quietZoneNone": "ללא",
+      "quietZoneMinimal": "מינימלי (2)",
+      "quietZoneStandard": "סטנדרטי (4)",
+      "quietZoneLarge": "גדול (6)",
+      "quietZoneExtraLarge": "גדול מאוד (8)"
+    },
+    "logo": {
+      "title": "לוגו (אופציונלי)",
+      "description": "הוסף לוגו במרכז לקודים עם המותג שלך. השתמש בתיקון שגיאות M או H.",
+      "addCenterImage": "הוסף תמונה במרכז",
+      "addCenterImageDesc": "לוגו או אייקון אופציונלי במרכז קוד ה-QR.",
+      "imageUrl": "כתובת תמונה",
+      "imageUrlPlaceholder": "https://example.com/logo.png",
+      "imageUrlDesc": "כתובת התמונה למרכז.",
+      "orUpload": "או העלה",
+      "fileSelected": "קובץ נבחר. החלף בבחירת קובץ אחר או כתובת תמונה.",
+      "logoSize": "גודל לוגו",
+      "logoSizeStandard": "סטנדרטי",
+      "logoSizeSmall": "קטן",
+      "logoSizeHint": "קטן שומר על הלוגו קומפקטי (≈12% מגודל ה-QR) לאמינות סריקה מקסימלית."
+    }
+  },
+  "qrTypes": {
+    "label": "סוג קוד QR",
+    "url": "URL",
+    "urlHelper": "קישורים לאתרים או אפליקציות",
+    "text": "טקסט",
+    "textHelper": "כל הודעה או הערה קצרה",
+    "wifi": "WiFi",
+    "wifiHelper": "התחבר לרשת WiFi",
+    "vcard": "vCard",
+    "vcardHelper": "שמור כרטיס אנשי קשר",
+    "email": "אימייל",
+    "emailHelper": "פתח טיוטת אימייל",
+    "phone": "טלפון",
+    "phoneHelper": "מספר לחיוג",
+    "sms": "SMS",
+    "smsHelper": "שלח SMS מוכן",
+    "whatsapp": "WhatsApp",
+    "whatsappHelper": "התחל צ'אט WhatsApp",
+    "facebook": "פייסבוק",
+    "facebookHelper": "פתח פרופיל או דף פייסבוק",
+    "instagram": "אינסטגרם",
+    "instagramHelper": "פתח פרופיל אינסטגרם",
+    "location": "מיקום",
+    "locationHelper": "פתח סיכה במפות",
+    "bitcoin": "ביטקוין",
+    "bitcoinHelper": "בקש תשלום בביטקוין"
+  },
+  "forms": {
+    "textContent": "תוכן טקסט",
+    "textPlaceholder": "הודעה, הערה או הוראות ארוכות יותר",
+    "urlLabel": "URL",
+    "urlPlaceholder": "https://example.com"
+  },
+  "theme": {
+    "toggle": "החלף ערכת נושא",
+    "light": "בהיר",
+    "dark": "כהה",
+    "system": "מערכת"
+  },
+  "sizeLabels": {
+    "small": "קטן",
+    "medium": "בינוני",
+    "large": "גדול",
+    "xlarge": "גדול מאוד",
+    "custom": "מותאם"
+  },
+  "styleLabels": {
+    "squares": "ריבועים",
+    "rounded": "מעוגלים",
+    "dots": "נקודות",
+    "gapped": "עם רווחים",
+    "vertical": "אנכי",
+    "horizontal": "אופקי"
+  },
+  "footer": {
+    "createdWith": "נוצר ב-",
+    "freeBy": "100% חינם לקהילה על ידי"
+  },
+  "language": {
+    "label": "שפה",
+    "en": "English",
+    "de": "Deutsch",
+    "es": "Español",
+    "he": "עברית"
+  },
+  "nav": {
+    "menu": "תפריט",
+    "home": "בית",
+    "about": "אודות",
+    "getAQuote": "בקש הצעת מחיר",
+    "openMenu": "פתח תפריט",
+    "closeMenu": "סגור תפריט"
+  },
+  "about": {
+    "intro": "דף זה נוצר על ידי צוות Codama. אנחנו סוכנות תוכנה שבונה מוצרים דיגיטליים ומסייעת לעסקים לצמוח. אנחנו עובדים עם סטארטאפים וחברות מבוססות כדי לספק אפליקציות ווב ומובייל, אוטומציה ופתרונות נתונים. למטה תוכלו ללמוד עוד על מה שאנחנו עושים ואיך אנחנו עובדים.",
+    "hero": {
+      "title": "אנחנו מגשימים את החזון הדיגיטלי שלכם. חכם, ניתן להרחבה ומוכן להשקה.",
+      "subtitle": "אנחנו עובדים איתכם כדי לבנות פתרונות מותאמים שמעניקים לעסק שלכם צמיחה. זה יותר מקוד—זו שותפות אמיתית."
+    },
+    "getAQuote": "בקש הצעת מחיר",
+    "qrCodeGenerator": "מחולל QR-Code",
+    "ourServices": "השירותים שלנו",
+    "services": {
+      "webApps": {
+        "title": "אפליקציות ווב",
+        "description": "אנחנו בונים אפליקציות ווב מותאמות אישית שמהירות, אמינות וידידותיות למשתמש. הצוות שלנו משתמש בכלים מודרניים כדי שהאפליקציה שלכם תפעל בצורה אופטימלית בכל המכשירים, תרוץ בצורה חלקה ותתוכנן להתרחב עם העסק שלכם.",
+        "tag1": "עיצוב רספונסיבי",
+        "tag2": "סטק מודרני",
+        "tag3": "ביצועים גבוהים"
+      },
+      "mobile": {
+        "title": "אפליקציות מובייל",
+        "description": "אנחנו מעצבים ומפתחים אפליקציות מובייל שמתאימות ליעדי העסק שלכם. בין אם ל-iOS, Android או שניהם, אנחנו מתמקדים בחוויית משתמש, ביצועים וגמישות לאורך זמן כדי שהמוצר שלכם ירגיש נכון מהיום הראשון.",
+        "tag1": "נייטיבי וקרוס-פלטפורמי",
+        "tag2": "UX אינטואיטיבי",
+        "tag3": "ארכיטקטורה ניתנת להרחבה"
+      },
+      "automation": {
+        "title": "אוטומציה ואינטגרציית AI",
+        "description": "אנחנו עוזרים לכם לחסוך זמן ולעבוד חכם יותר על ידי הוספת כלי AI ואוטומציה לעסק. מאוטומציה פשוטה של משימות ועד זרימות עבודה מלאות עם AI, אנחנו הופכים את המערכות שלכם למהירות, קלות ויעילות יותר.",
+        "tag1": "אוטומציית תהליכים",
+        "tag2": "כלי AI",
+        "tag3": "יעילות זרימת עבודה"
+      },
+      "dataBi": {
+        "title": "נתונים ופתרונות BI",
+        "description": "אנחנו הופכים את נתוני העסק שלכם לתובנות ברורות שאפשר לפעול לפיהן. מבניית דשבורדים ועד חיבור מסדי נתונים, אנחנו עוזרים לכם לקבל החלטות חכמות עם כלים כמו Power BI, Looker Studio ו-Google Sheets.",
+        "tag1": "דשבורדים מותאמים",
+        "tag2": "אינטגרציית פלטפורמות",
+        "tag3": "תובנות לפעולה"
+      },
+      "businessWebsites": {
+        "title": "אתרי עסקים",
+        "description": "אנחנו יוצרים אתרי WordPress מודרניים וקלים לניהול שנראים ועובדים מצוין בכל מכשיר. בין אם דף נחיתה או אתר מלא, אנחנו בונים עם SEO ונוחות שימוש במחשבה כדי שהעסק שלכם יעשה את הרושם הנכון.",
+        "tag1": "מומחי WordPress",
+        "tag2": "מוכן לעסק",
+        "tag3": "ידידותי ל-SEO"
+      }
+    },
+    "whyChoose": {
+      "title": "למה לבחור ב-Codama",
+      "quote": "אתם מכירים את העסק שלכם הכי טוב. לכן אנחנו מתחילים בהקשבה—ואז צוללים לתעשייה שלכם כדי להבין לעומק את הקהל והיעדים שלכם."
+    }
+  }
+}

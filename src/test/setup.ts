@@ -2,6 +2,9 @@
 // Extend expect with jest-dom matchers
 import '@testing-library/jest-dom/vitest'
 
+// Initialize i18n so useTranslation works in tests
+import '@/i18n'
+
 // Fetch polyfill (JSDOM)
 import 'whatwg-fetch'
 
@@ -19,6 +22,33 @@ Object.defineProperty(window, 'matchMedia', {
     dispatchEvent: vi.fn(),
   })),
 })
+
+// Basic ResizeObserver polyfill for Radix UI components in JSDOM
+class ResizeObserver {
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  observe() {}
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  unobserve() {}
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  disconnect() {}
+}
+
+// IntersectionObserver polyfill for FloatingQRPreview in JSDOM
+class IntersectionObserverMock {
+  observe() {}
+  unobserve() {}
+  disconnect() {}
+  readonly root: Element | null = null
+  readonly rootMargin = ''
+  readonly thresholds: number[] = []
+}
+
+interface TestGlobals {
+  ResizeObserver: typeof ResizeObserver
+  IntersectionObserver: typeof IntersectionObserverMock
+}
+;(globalThis as unknown as TestGlobals).ResizeObserver = ResizeObserver
+;(globalThis as unknown as TestGlobals).IntersectionObserver = IntersectionObserverMock
 
 // MSW test server (if you plan to use MSW for API mocking)
 // import { server } from '@/mocks/server'

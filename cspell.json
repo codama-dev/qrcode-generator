@@ -6,22 +6,34 @@
     "biome",
     "boilerplate",
     "cmdk",
+    "Eeob",
     "frontend",
+    "hrefs",
     "hookform",
     "impasta",
     "lucide",
+    "Lngs",
+    "nopass",
     "nums",
+    "Nngkd",
     "radix",
     "shadcn",
     "sonner",
     "tailwindcss",
     "tanstack",
     "Topbar",
+    "Ttpy",
+    "vcard",
     "VITE",
     "vitest",
     "Vitest",
     "WCAG",
-    "zod"
+    "xlarge",
+    "zod",
+    "qrcode",
+    "scannability",
+    "jspdf",
+    "unstub"
   ],
   "flagWords": [],
   "ignorePaths": [
@@ -33,6 +45,7 @@
     "*.lock",
     ".git/**",
     ".husky/**",
+    "**/*.json",
     "**/*.svg",
     "**/*.png",
     "**/*.jpg",
@@ -44,7 +57,7 @@
     "**/*.eot"
   ],
   "files": [
-    "**/*.{ts,tsx,js,jsx,json,md,txt,html,css,scss,less}",
+    "**/*.{ts,tsx,js,jsx,md,txt,html,css,scss,less}",
     "!node_modules/**",
     "!dist/**",
     "!coverage/**"
@@ -54,8 +67,6 @@
     "typescriptreact",
     "javascript",
     "javascriptreact",
-    "json",
-    "jsonc",
     "markdown",
     "text",
     "html",
@@ -99,10 +110,6 @@
         "/import\\s+.*\\s+from\\s+['\"].*['\"];?/g",
         "/require\\s*\\(['\"].*['\"]\\)/g"
       ]
-    },
-    {
-      "languageId": "json,jsonc",
-      "ignoreRegExpList": ["/\"[^\"]*\":/g", "/\\b\\d+\\b/g"]
     },
     {
       "languageId": "markdown",

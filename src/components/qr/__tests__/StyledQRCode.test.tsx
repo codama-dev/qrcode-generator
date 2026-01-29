@@ -32,6 +32,54 @@ describe('StyledQRCode', () => {
     expect(rects.length).toBeGreaterThan(0)
   })
 
+  it('renders gapped style as smaller rects with visible spacing', () => {
+    const { container } = render(
+      <StyledQRCode value="x" size={64} level="M" style="gapped" includeMargin />
+    )
+    const svg = container.querySelector('svg')
+    expect(svg).toBeInTheDocument()
+    const rects = svg?.querySelectorAll('rect') ?? []
+    expect(rects.length).toBeGreaterThan(0)
+    const hasSmallerRect = [...rects].some(rect => {
+      const width = Number.parseFloat(rect.getAttribute('width') ?? '0')
+      const height = Number.parseFloat(rect.getAttribute('height') ?? '0')
+      return width > 0 && width < 1 && height > 0 && height < 1
+    })
+    expect(hasSmallerRect).toBe(true)
+  })
+
+  it('renders vertical style as tall narrow rects', () => {
+    const { container } = render(
+      <StyledQRCode value="x" size={64} level="M" style="vertical" includeMargin />
+    )
+    const svg = container.querySelector('svg')
+    expect(svg).toBeInTheDocument()
+    const rects = svg?.querySelectorAll('rect') ?? []
+    expect(rects.length).toBeGreaterThan(0)
+    const hasTallNarrowRect = [...rects].some(rect => {
+      const width = Number.parseFloat(rect.getAttribute('width') ?? '0')
+      const height = Number.parseFloat(rect.getAttribute('height') ?? '0')
+      return width > 0 && width < 1 && height === 1
+    })
+    expect(hasTallNarrowRect).toBe(true)
+  })
+
+  it('renders horizontal style as wide short rects', () => {
+    const { container } = render(
+      <StyledQRCode value="x" size={64} level="M" style="horizontal" includeMargin />
+    )
+    const svg = container.querySelector('svg')
+    expect(svg).toBeInTheDocument()
+    const rects = svg?.querySelectorAll('rect') ?? []
+    expect(rects.length).toBeGreaterThan(0)
+    const hasWideShortRect = [...rects].some(rect => {
+      const width = Number.parseFloat(rect.getAttribute('width') ?? '0')
+      const height = Number.parseFloat(rect.getAttribute('height') ?? '0')
+      return width === 1 && height > 0 && height < 1
+    })
+    expect(hasWideShortRect).toBe(true)
+  })
+
   it('uses aria-label for accessibility', () => {
     render(
       <StyledQRCode value="test" size={64} level="M" style="squares" aria-label="Test QR code" />
@@ -56,6 +104,55 @@ describe('StyledQRCode', () => {
     const fills = [...paths].map(p => p.getAttribute('fill'))
     expect(fills).toContain('#0000ff')
     expect(fills).toContain('#ff0000')
+  })
+
+  it('renders linear foreground gradient when enabled', () => {
+    const { container } = render(
+      <StyledQRCode
+        value="x"
+        size={64}
+        level="M"
+        style="squares"
+        foregroundGradient={{
+          enabled: true,
+          type: 'linear',
+          startColor: '#000000',
+          endColor: '#ffffff',
+          angle: 90,
+        }}
+      />
+    )
+    const svg = container.querySelector('svg')
+    expect(svg).toBeInTheDocument()
+    const linearGradients = svg?.querySelectorAll('linearGradient') ?? []
+    expect(linearGradients.length).toBeGreaterThan(0)
+    const moduleElements =
+      svg?.querySelectorAll('path[fill^="url("],rect[fill^="url("],circle[fill^="url("]') ?? []
+    expect(moduleElements.length).toBeGreaterThan(0)
+  })
+
+  it('renders radial background gradient when enabled', () => {
+    const { container } = render(
+      <StyledQRCode
+        value="x"
+        size={64}
+        level="M"
+        style="squares"
+        backgroundGradient={{
+          enabled: true,
+          type: 'radial',
+          startColor: '#000000',
+          endColor: '#ffffff',
+          angle: 135,
+        }}
+      />
+    )
+    const svg = container.querySelector('svg')
+    expect(svg).toBeInTheDocument()
+    const radialGradients = svg?.querySelectorAll('radialGradient') ?? []
+    expect(radialGradients.length).toBeGreaterThan(0)
+    const bgPath = svg?.querySelector('path')
+    expect(bgPath?.getAttribute('fill')?.startsWith('url(')).toBe(true)
   })
 
   it('defaults to black and white when colors not passed', () => {
@@ -144,5 +241,24 @@ describe('StyledQRCode', () => {
     })
 
     vi.stubGlobal('Image', RealImage)
+  })
+
+  it('applies quiet zone margin when includeMargin is true', () => {
+    const { container: withMargin } = render(
+      <StyledQRCode value="x" size={64} level="M" style="squares" includeMargin quietZone={8} />
+    )
+    const { container: withoutMargin } = render(
+      <StyledQRCode value="x" size={64} level="M" style="squares" includeMargin={false} />
+    )
+
+    const svgWith = withMargin.querySelector('svg')
+    const svgWithout = withoutMargin.querySelector('svg')
+    expect(svgWith).toBeInTheDocument()
+    expect(svgWithout).toBeInTheDocument()
+    const viewBoxWith = svgWith?.getAttribute('viewBox') ?? ''
+    const viewBoxWithout = svgWithout?.getAttribute('viewBox') ?? ''
+    const sizeWith = Number.parseInt(viewBoxWith.split(' ')[2] ?? '0', 10)
+    const sizeWithout = Number.parseInt(viewBoxWithout.split(' ')[2] ?? '0', 10)
+    expect(sizeWith).toBeGreaterThan(sizeWithout)
   })
 })

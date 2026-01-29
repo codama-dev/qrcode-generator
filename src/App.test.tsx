@@ -10,8 +10,9 @@ describe('App routing and layout', () => {
     expect(headings[0]).toBeInTheDocument()
   })
 
-  it('shows generator-focused content (content input)', () => {
+  it('shows generator-focused content (QR type and URL input)', () => {
     render(<App />)
-    expect(screen.getByRole('textbox', { name: /^content$/i })).toBeInTheDocument()
+    expect(screen.getByText(/qr code type/i)).toBeInTheDocument()
+    expect(screen.getByRole('textbox', { name: /^url$/i })).toBeInTheDocument()
   })
 })
