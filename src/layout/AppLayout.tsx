@@ -13,6 +13,8 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet'
+import logoDesktop from '@/media/logo-desktop.webp'
+import logoMobile from '@/media/logo-mobile.webp'
 import { PageFooter } from '@/pages/PageFooter'
 
 interface AppLayoutProps {
@@ -60,13 +62,26 @@ export function AppLayout({ children }: AppLayoutProps) {
 
   return (
     <div className="flex min-h-screen flex-col">
-      <header className="border-border border-b bg-background px-6 py-4">
-        <div className="flex items-center justify-between gap-6">
+      <header className="border-border border-b bg-background px-4 py-4 sm:px-6">
+        <div className="flex items-center justify-between gap-3 sm:gap-6">
           <div className="flex min-w-0 flex-1 items-center gap-8">
-            <div className="min-w-0 shrink-0">
-              {/* Keep a single <h1> on the page for proper document outline */}
-              <p className="font-semibold text-foreground text-xl">{t('app.title')}</p>
-              <p className="mt-0.5 text-muted-foreground text-sm">{t('app.tagline')}</p>
+            <div className="flex min-w-0 flex-1 items-center gap-2 sm:flex-initial sm:gap-3">
+              <img
+                src={logoDesktop}
+                srcSet={`${logoMobile} 640w, ${logoDesktop} 768w`}
+                sizes="(max-width: 640px) 40px, 48px"
+                alt="Codama Logo"
+                className="size-10 shrink-0 md:size-12"
+                width="48"
+                height="48"
+              />
+              <div className="min-w-0 overflow-hidden">
+                {/* Keep a single <h1> on the page for proper document outline */}
+                <p className="truncate font-semibold text-base text-foreground sm:text-xl">
+                  {t('app.title')}
+                </p>
+                <p className="hidden text-muted-foreground text-sm sm:block">{t('app.tagline')}</p>
+              </div>
             </div>
             <div className="hidden h-8 w-px shrink-0 bg-border md:block" aria-hidden />
             <div className="hidden md:block md:pl-2">

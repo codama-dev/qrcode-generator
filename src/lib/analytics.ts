@@ -7,7 +7,7 @@
  *
  * Leave empty to keep analytics and Search Console features disabled.
  */
-export const GA_MEASUREMENT_ID = ''
+export const GA_MEASUREMENT_ID = 'G-V64XFZGSTW'
 export const GOOGLE_SITE_VERIFICATION = ''
 
 const GA_SCRIPT_URL = 'https://www.googletagmanager.com/gtag/js'
@@ -47,13 +47,28 @@ function addSearchConsoleVerification(content: string): void {
 /**
  * Initializes Google Analytics (if GA_MEASUREMENT_ID is set) and adds
  * Search Console verification meta tag (if GOOGLE_SITE_VERIFICATION is set).
- * Call once on app load (e.g. from main.tsx).
+ * Called internally after page load; use initAnalyticsWhenReady() from the app.
  */
-export function initAnalytics(): void {
+function initAnalytics(): void {
   if (GA_MEASUREMENT_ID) {
     loadGoogleAnalytics(GA_MEASUREMENT_ID)
   }
   if (GOOGLE_SITE_VERIFICATION) {
     addSearchConsoleVerification(GOOGLE_SITE_VERIFICATION)
   }
+}
+
+/**
+ * Schedules analytics to run after the page has fully loaded, so the site
+ * stays fast and interactive. Call once from main.tsx.
+ */
+export function initAnalyticsWhenReady(): void {
+  if (typeof window === 'undefined') {
+    return
+  }
+  if (document.readyState === 'complete') {
+    initAnalytics()
+    return
+  }
+  window.addEventListener('load', () => initAnalytics(), { once: true })
 }
