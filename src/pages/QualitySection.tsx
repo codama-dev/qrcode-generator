@@ -70,7 +70,7 @@ export function QualitySection({ form, detailLevel, sizeOption, customSize }: Qu
                     className={
                       isSelected
                         ? 'font-bold text-[0.65rem] text-white'
-                        : 'text-[0.65rem] text-muted-foreground/80'
+                        : 'text-[0.65rem] text-muted-foreground'
                     }
                   >
                     {description}

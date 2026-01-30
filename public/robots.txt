@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://free-qr-code.codama.dev/sitemap.xml

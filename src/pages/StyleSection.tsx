@@ -68,10 +68,10 @@ export function StyleSection({ form }: StyleSectionProps) {
                       ].join(' ')}
                       aria-pressed={isSelected}
                     >
-                      <span className="whitespace-pre font-mono text-[0.65rem] text-foreground/80 leading-tight">
+                      <span className="whitespace-pre font-mono text-[0.65rem] text-foreground leading-tight">
                         {STYLE_PREVIEWS[opt.value]}
                       </span>
-                      <span className="mt-1 font-medium text-[0.7rem]">
+                      <span className="mt-1 font-medium text-[0.7rem] text-foreground">
                         {t(`styleLabels.${opt.value}`)}
                       </span>
                     </button>

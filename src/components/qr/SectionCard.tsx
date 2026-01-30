@@ -1,5 +1,5 @@
 import type * as React from 'react'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import { cn } from '@/lib/utils'
 
 interface SectionCardProps {
@@ -23,7 +23,7 @@ export function SectionCard({ icon, title, description, children, className }: S
           {icon}
         </div>
         <div className="space-y-0.5">
-          <CardTitle className="font-semibold text-base tracking-tight">{title}</CardTitle>
+          <h2 className="font-semibold text-base tracking-tight">{title}</h2>
           {description ? <p className="text-muted-foreground text-xs">{description}</p> : null}
         </div>
       </CardHeader>
