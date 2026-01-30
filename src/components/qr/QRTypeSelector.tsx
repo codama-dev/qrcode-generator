@@ -24,18 +24,18 @@ interface QRTypeSelectorProps {
 }
 
 const TYPES: { value: QRType; icon: React.ReactNode }[] = [
-  { value: 'url', icon: <Link className="size-4" aria-hidden="true" /> },
-  { value: 'text', icon: <TypeIcon className="size-4" aria-hidden="true" /> },
-  { value: 'wifi', icon: <Wifi className="size-4" aria-hidden="true" /> },
-  { value: 'vcard', icon: <User className="size-4" aria-hidden="true" /> },
-  { value: 'email', icon: <Mail className="size-4" aria-hidden="true" /> },
-  { value: 'phone', icon: <Phone className="size-4" aria-hidden="true" /> },
-  { value: 'sms', icon: <MessageSquare className="size-4" aria-hidden="true" /> },
-  { value: 'whatsapp', icon: <MessageCircle className="size-4" aria-hidden="true" /> },
-  { value: 'facebook', icon: <Facebook className="size-4" aria-hidden="true" /> },
-  { value: 'instagram', icon: <Instagram className="size-4" aria-hidden="true" /> },
-  { value: 'location', icon: <MapPin className="size-4" aria-hidden="true" /> },
-  { value: 'bitcoin', icon: <Bitcoin className="size-4" aria-hidden="true" /> },
+  { value: 'url', icon: <Link className="size-5" aria-hidden="true" /> },
+  { value: 'text', icon: <TypeIcon className="size-5" aria-hidden="true" /> },
+  { value: 'wifi', icon: <Wifi className="size-5" aria-hidden="true" /> },
+  { value: 'vcard', icon: <User className="size-5" aria-hidden="true" /> },
+  { value: 'email', icon: <Mail className="size-5" aria-hidden="true" /> },
+  { value: 'phone', icon: <Phone className="size-5" aria-hidden="true" /> },
+  { value: 'sms', icon: <MessageSquare className="size-5" aria-hidden="true" /> },
+  { value: 'whatsapp', icon: <MessageCircle className="size-5" aria-hidden="true" /> },
+  { value: 'facebook', icon: <Facebook className="size-5" aria-hidden="true" /> },
+  { value: 'instagram', icon: <Instagram className="size-5" aria-hidden="true" /> },
+  { value: 'location', icon: <MapPin className="size-5" aria-hidden="true" /> },
+  { value: 'bitcoin', icon: <Bitcoin className="size-5" aria-hidden="true" /> },
 ]
 
 export const QR_TYPE_META: Record<QRType, (typeof TYPES)[number]> = TYPES.reduce(
@@ -77,17 +77,17 @@ export function QRTypeSelector({ value, onChange }: QRTypeSelectorProps) {
               )}
               aria-pressed={isActive}
             >
-              <span className="flex flex-col items-center gap-1 font-medium">
+              <span className="flex flex-col items-center gap-2 font-medium">
                 <span
                   className={cn(
-                    'flex size-5 items-center justify-center rounded-full transition-colors',
+                    'flex size-9 items-center justify-center rounded-full transition-colors',
                     !isActive && 'bg-muted-foreground/15 group-hover/type:bg-white/15',
                     isActive && 'bg-white/15'
                   )}
                 >
                   {type.icon}
                 </span>
-                <span>{t(`qrTypes.${type.value}`)}</span>
+                <span className="text-sm">{t(`qrTypes.${type.value}`)}</span>
               </span>
             </Button>
           )

@@ -187,14 +187,15 @@ export interface PdfExportOptions {
   qrSize?: number // mm, size of QR on page
   centered?: boolean
   margin?: number // mm
-  /** @deprecated PDF export now always embeds the SVG as vector; gradients and center images are preserved without rasterizing the whole QR. */
+  /** When true, rasterizes the QR to preserve gradients; otherwise uses vector (svg2pdf). */
   hasGradients?: boolean
 }
 
 /**
  * Export QR code SVG element as a PDF.
- * The QR modules and shapes are kept as vector paths for sharp output.
- * The center logo image remains raster (embedded as an <image>), so only the logo is bitmap.
+ * - When hasGradients is false (default): embeds as vector via svg2pdf for crisp, scalable output.
+ * - When hasGradients is true: rasterizes to PNG to preserve gradient appearance.
+ * - In vector mode, center logo images are inlined as data URLs (only logo is raster, QR stays vector).
  */
 export async function exportAsPdf(
   svgElement: SVGSVGElement,
@@ -208,8 +209,7 @@ export async function exportAsPdf(
     qrSize = 50,
     centered = true,
     margin = 10,
-    // kept for backwards compatibility; no longer changes behavior
-    hasGradients: _hasGradients = false,
+    hasGradients = false,
   } = options
 
   const { jsPDF } = await import('jspdf')
@@ -240,19 +240,56 @@ export async function exportAsPdf(
     y = (height - qrSize) / 2
   }
 
-  // Vector path: embed SVG via svg2pdf for sharp, scalable output.
-  // We inline center images as data URLs so only the logo is raster, while QR modules stay vector.
-  const svgWithInlineImages = await inlineSvgImages(svgElement)
-  const svg2pdfModule = await import('svg2pdf.js')
-  type Svg2PdfFn = (
-    svg: SVGSVGElement,
-    pdfInstance: unknown,
-    opts: { x: number; y: number; width: number; height: number }
-  ) => void | Promise<void>
-  const mod = svg2pdfModule as unknown as { default?: Svg2PdfFn; svg2pdf?: Svg2PdfFn }
-  const svg2pdfFn: Svg2PdfFn = (mod.default ?? mod.svg2pdf) as Svg2PdfFn
+  if (hasGradients) {
+    // Rasterize to PNG so gradients are preserved exactly as shown in preview
+    // First inline any center images so they appear in the rasterized output
+    const svgWithInlineImages = await inlineSvgImages(svgElement)
+    const svgString = new XMLSerializer().serializeToString(svgWithInlineImages)
+    const dataUrl = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svgString)}`
 
-  await svg2pdfFn(svgWithInlineImages, pdf, { x, y, width: qrSize, height: qrSize })
+    const pngDataUrl = await new Promise<string>((resolve, reject) => {
+      const img = new Image()
+      img.onload = () => {
+        try {
+          const canvas = document.createElement('canvas')
+          const svgRect = svgElement.getBoundingClientRect()
+          const canvasWidth = svgRect.width || img.naturalWidth || 256
+          const canvasHeight = svgRect.height || img.naturalHeight || 256
+          canvas.width = canvasWidth
+          canvas.height = canvasHeight
+          const ctx = canvas.getContext('2d')
+          if (!ctx) {
+            reject(new Error('Canvas 2d context not available'))
+            return
+          }
+          ctx.fillStyle = '#ffffff'
+          ctx.fillRect(0, 0, canvasWidth, canvasHeight)
+          ctx.drawImage(img, 0, 0, canvasWidth, canvasHeight)
+          resolve(canvas.toDataURL('image/png'))
+        } catch (err) {
+          reject(err)
+        }
+      }
+      img.onerror = () => reject(new Error('Failed to load SVG for PDF export'))
+      img.src = dataUrl
+    })
+
+    pdf.addImage(pngDataUrl, 'PNG', x, y, qrSize, qrSize)
+  } else {
+    // Vector path: embed SVG via svg2pdf for sharp, scalable output.
+    // Inline center images as data URLs so only the logo is raster, QR modules stay vector.
+    const svgWithInlineImages = await inlineSvgImages(svgElement)
+    const svg2pdfModule = await import('svg2pdf.js')
+    type Svg2PdfFn = (
+      svg: SVGSVGElement,
+      pdfInstance: unknown,
+      opts: { x: number; y: number; width: number; height: number }
+    ) => void | Promise<void>
+    const mod = svg2pdfModule as unknown as { default?: Svg2PdfFn; svg2pdf?: Svg2PdfFn }
+    const svg2pdfFn: Svg2PdfFn = (mod.default ?? mod.svg2pdf) as Svg2PdfFn
+
+    await svg2pdfFn(svgWithInlineImages, pdf, { x, y, width: qrSize, height: qrSize })
+  }
 
   pdf.save(filename.endsWith('.pdf') ? filename : `${filename}.pdf`)
 }

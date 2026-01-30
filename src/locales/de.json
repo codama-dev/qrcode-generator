@@ -6,7 +6,7 @@
   "pageHeader": {
     "badge": "Sofortige, hochwertige QR-Codes",
     "title": "100% KOSTENLOS Design-orientierter QR-Code-Generator",
-    "subtitle": "100% kostenlos—keine Anmeldung, keine Limits. Erstellen Sie markenorientierte QR-Codes mit anpassbaren Farben, Stilen und Logos—bereit für Druck oder Digital in Sekunden."
+    "subtitle": "100% kostenlos, keine Anmeldung, keine Limits. Erstellen Sie markenorientierte QR-Codes mit anpassbaren Farben, Stilen und Logos, bereit für Druck oder Digital in Sekunden."
   },
   "common": {
     "generate": "QR-Code erstellen",
@@ -79,7 +79,7 @@
     },
     "quality": {
       "title": "Qualität & Größe",
-      "description": "Wählen Sie Detailstufe und Größe für Ihren Anwendungsfall—von schnellen Tests bis druckfertig.",
+      "description": "Wählen Sie Detailstufe und Größe für Ihren Anwendungsfall, von schnellen Tests bis druckfertig.",
       "detailLevel": "Detailstufe",
       "outputSize": "Ausgabegröße",
       "sizePreset": "Größenvoreinstellung",
@@ -196,7 +196,7 @@
     "intro": "Diese Seite wurde vom Codama-Team erstellt. Wir sind eine Software-Agentur, die digitale Produkte entwickelt und Unternehmen beim Wachstum unterstützt. Wir arbeiten mit Startups und etablierten Unternehmen zusammen und liefern Web- und Mobile-Apps, Automatisierung und Datenlösungen. Unten erfahren Sie mehr über unsere Arbeit und unsere Vorgehensweise.",
     "hero": {
       "title": "Wir setzen Ihre digitale Vision um. Smart, skalierbar und startklar.",
-      "subtitle": "Wir entwickeln mit Ihnen maßgeschneiderte Lösungen, die Ihr Geschäft voranbringen. Es geht um mehr als Code—es ist eine echte Partnerschaft."
+      "subtitle": "Wir entwickeln mit Ihnen maßgeschneiderte Lösungen, die Ihr Geschäft voranbringen. Es geht um mehr als Code, es ist eine echte Partnerschaft."
     },
     "getAQuote": "Angebot anfragen",
     "qrCodeGenerator": "QR-Code-Generator",
@@ -211,14 +211,14 @@
       },
       "mobile": {
         "title": "Mobile Anwendungen",
-        "description": "Wir entwerfen und entwickeln mobile Apps, die zu Ihren Geschäftszielen passen. Ob für iOS, Android oder beides—wir legen Wert auf Nutzererlebnis, Performance und langfristige Flexibilität, damit Ihr Produkt von Tag eins stimmig ist.",
+        "description": "Wir entwerfen und entwickeln mobile Apps, die zu Ihren Geschäftszielen passen. Ob für iOS, Android oder beides, wir legen Wert auf Nutzererlebnis, Performance und langfristige Flexibilität, damit Ihr Produkt von Tag eins stimmig ist.",
         "tag1": "Nativ & plattformübergreifend",
         "tag2": "Intuitive UX",
         "tag3": "Skalierbare Architektur"
       },
       "automation": {
         "title": "Automatisierung & KI-Integration",
-        "description": "Wir helfen Ihnen, Zeit zu sparen und effizienter zu arbeiten—durch KI-Tools und Automatisierung. Von einfacher Aufgaben-Automatisierung bis zu vollständigen KI-Workflows machen wir Ihre Systeme schneller, einfacher und effizienter.",
+        "description": "Wir helfen Ihnen, Zeit zu sparen und effizienter zu arbeiten, durch KI-Tools und Automatisierung. Von einfacher Aufgaben-Automatisierung bis zu vollständigen KI-Workflows machen wir Ihre Systeme schneller, einfacher und effizienter.",
         "tag1": "Prozessautomatisierung",
         "tag2": "KI-Tools",
         "tag3": "Workflow-Effizienz"
@@ -232,7 +232,7 @@
       },
       "businessWebsites": {
         "title": "Unternehmens-Websites",
-        "description": "Wir erstellen moderne, leicht zu pflegende WordPress-Websites, die auf jedem Gerät gut aussehen und funktionieren. Ob Landingpage oder komplette Website—wir bauen mit Fokus auf SEO und Usability, damit Ihr Unternehmen den richtigen ersten Eindruck hinterlässt.",
+        "description": "Wir erstellen moderne, leicht zu pflegende WordPress-Websites, die auf jedem Gerät gut aussehen und funktionieren. Ob Landingpage oder komplette Website, wir bauen mit Fokus auf SEO und Usability, damit Ihr Unternehmen den richtigen ersten Eindruck hinterlässt.",
         "tag1": "WordPress-Experten",
         "tag2": "Geschäftsbereit",
         "tag3": "SEO-freundlich"
@@ -240,7 +240,7 @@
     },
     "whyChoose": {
       "title": "Warum Codama",
-      "quote": "Sie kennen Ihr Geschäft am besten. Darum hören wir zu—und tauchen dann in Ihre Branche ein, um Ihre Zielgruppe und Ziele wirklich zu verstehen."
+      "quote": "Sie kennen Ihr Geschäft am besten. Darum hören wir zu, und tauchen dann in Ihre Branche ein, um Ihre Zielgruppe und Ziele wirklich zu verstehen."
     }
   }
 }

@@ -6,7 +6,7 @@
   "pageHeader": {
     "badge": "Instant, high-quality QR codes",
     "title": "100% FREE Design-forward QR code generator",
-    "subtitle": "100% free—no signup, no limits. Generate branded QR codes with customizable colors, styles, and logos—ready for print or digital in seconds."
+    "subtitle": "100% free, no signup, no limits. Generate branded QR codes with customizable colors, styles, and logos, ready for print or digital in seconds."
   },
   "common": {
     "generate": "Generate QR code",
@@ -79,7 +79,7 @@
     },
     "quality": {
       "title": "Quality & size",
-      "description": "Pick a detail level and size that fits your use case—from quick tests to print-ready.",
+      "description": "Pick a detail level and size that fits your use case, from quick tests to print-ready.",
       "detailLevel": "Detail level",
       "outputSize": "Output size",
       "sizePreset": "Size preset",
@@ -240,7 +240,7 @@
     },
     "whyChoose": {
       "title": "Why choose Codama",
-      "quote": "You know your business best. That's why we start by listening—then we dig into your industry to fully understand your audience and goals."
+      "quote": "You know your business best. That's why we start by listening, then we dig into your industry to fully understand your audience and goals."
     }
   }
 }

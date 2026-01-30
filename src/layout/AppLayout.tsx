@@ -13,8 +13,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet'
-import logoDesktop from '@/media/logo-desktop.webp'
-import logoMobile from '@/media/logo-mobile.webp'
+import logoSvg from '@/media/qrcode-logo-svg.svg'
 import { PageFooter } from '@/pages/PageFooter'
 
 interface AppLayoutProps {
@@ -67,10 +66,8 @@ export function AppLayout({ children }: AppLayoutProps) {
           <div className="flex min-w-0 flex-1 items-center gap-8">
             <div className="flex min-w-0 flex-1 items-center gap-2 sm:flex-initial sm:gap-3">
               <img
-                src={logoDesktop}
-                srcSet={`${logoMobile} 640w, ${logoDesktop} 768w`}
-                sizes="(max-width: 640px) 40px, 48px"
-                alt="Codama Logo"
+                src={logoSvg}
+                alt="Free QR Code Generator"
                 className="size-10 shrink-0 md:size-12"
                 width="48"
                 height="48"
