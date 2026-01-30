@@ -25,12 +25,12 @@ export function QRContentSection({
       description={t('sections.qrContent.description')}
     >
       <div className="space-y-4">
-        <QRTypeSelector value={qrType} onChange={onTypeChange} />
         <QRTypeForm
           type={qrType}
           value={qrTypeData[qrType]}
           onChange={value => onTypeDataChange(qrType, value)}
         />
+        <QRTypeSelector value={qrType} onChange={onTypeChange} />
         <p className="text-[0.7rem] text-muted-foreground sm:text-xs">
           {QR_TYPE_META[qrType] ? t(`qrTypes.${qrType}Helper`) : ''}
         </p>

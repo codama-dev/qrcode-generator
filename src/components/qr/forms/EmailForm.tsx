@@ -2,6 +2,7 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
 import type { EmailData } from '@/lib/qrTypes'
+import { inputAccentBase, inputAccentClass } from './inputStyles'
 
 interface EmailFormProps {
   value: EmailData
@@ -23,7 +24,7 @@ export function EmailForm({ value, onChange }: EmailFormProps) {
           value={value.to}
           onChange={e => update({ to: e.target.value })}
           placeholder="recipient@example.com"
-          className="min-h-11"
+          className={inputAccentClass}
         />
       </div>
       <div className="space-y-2">
@@ -33,7 +34,7 @@ export function EmailForm({ value, onChange }: EmailFormProps) {
           value={value.subject ?? ''}
           onChange={e => update({ subject: e.target.value })}
           placeholder="Subject line"
-          className="min-h-11"
+          className={inputAccentClass}
         />
       </div>
       <div className="space-y-2">
@@ -43,7 +44,7 @@ export function EmailForm({ value, onChange }: EmailFormProps) {
           value={value.body ?? ''}
           onChange={e => update({ body: e.target.value })}
           placeholder="Message body"
-          className="min-h-[100px] resize-y"
+          className={`${inputAccentBase} min-h-[100px] resize-y`}
         />
       </div>
     </div>

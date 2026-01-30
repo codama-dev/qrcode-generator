@@ -2,6 +2,7 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
 import type { BitcoinData } from '@/lib/qrTypes'
+import { inputAccentBase, inputAccentClass } from './inputStyles'
 
 interface BitcoinFormProps {
   value: BitcoinData
@@ -22,7 +23,7 @@ export function BitcoinForm({ value, onChange }: BitcoinFormProps) {
           value={value.address}
           onChange={e => update({ address: e.target.value })}
           placeholder="1BoatSLRHtKNngkdXEeobR76b53LETtpyT"
-          className="min-h-11"
+          className={inputAccentClass}
         />
       </div>
       <div className="grid gap-3 sm:grid-cols-2">
@@ -33,7 +34,7 @@ export function BitcoinForm({ value, onChange }: BitcoinFormProps) {
             value={value.amount ?? ''}
             onChange={e => update({ amount: e.target.value })}
             placeholder="0.01"
-            className="min-h-11"
+            className={inputAccentClass}
           />
         </div>
         <div className="space-y-2">
@@ -43,7 +44,7 @@ export function BitcoinForm({ value, onChange }: BitcoinFormProps) {
             value={value.label ?? ''}
             onChange={e => update({ label: e.target.value })}
             placeholder="Donation"
-            className="min-h-11"
+            className={inputAccentClass}
           />
         </div>
       </div>
@@ -54,7 +55,7 @@ export function BitcoinForm({ value, onChange }: BitcoinFormProps) {
           value={value.message ?? ''}
           onChange={e => update({ message: e.target.value })}
           placeholder="Thank you for your support!"
-          className="min-h-[80px] resize-y"
+          className={`${inputAccentBase} min-h-[80px] resize-y`}
         />
       </div>
     </div>

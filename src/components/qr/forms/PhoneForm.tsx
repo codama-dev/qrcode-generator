@@ -1,6 +1,7 @@
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import type { PhoneData } from '@/lib/qrTypes'
+import { inputAccentClass } from './inputStyles'
 
 interface PhoneFormProps {
   value: PhoneData
@@ -17,7 +18,7 @@ export function PhoneForm({ value, onChange }: PhoneFormProps) {
         value={value.number}
         onChange={e => onChange({ ...value, number: e.target.value })}
         placeholder="+1 555 000 0000"
-        className="min-h-11"
+        className={inputAccentClass}
       />
     </div>
   )

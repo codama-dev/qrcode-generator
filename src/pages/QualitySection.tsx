@@ -60,7 +60,7 @@ export function QualitySection({ form, detailLevel, sizeOption, customSize }: Qu
                   className={[
                     'flex flex-col items-start justify-center rounded-lg border px-3 py-2 text-left text-xs transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background',
                     isSelected
-                      ? 'border-transparent bg-linear-to-r from-orange-500 to-amber-400 text-white shadow-sm'
+                      ? 'border-primary bg-primary/10 text-primary shadow-sm'
                       : 'border-border bg-background hover:bg-muted',
                   ].join(' ')}
                   aria-pressed={isSelected}
@@ -69,7 +69,7 @@ export function QualitySection({ form, detailLevel, sizeOption, customSize }: Qu
                   <span
                     className={
                       isSelected
-                        ? 'font-bold text-[0.65rem] text-white'
+                        ? 'font-bold text-[0.65rem] text-primary'
                         : 'text-[0.65rem] text-muted-foreground'
                     }
                   >

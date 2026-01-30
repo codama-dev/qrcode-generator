@@ -3,6 +3,7 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
 import type { UrlTextData } from '@/lib/qrTypes'
+import { inputAccentBase, inputAccentClassUrl } from './inputStyles'
 
 interface UrlTextFormProps {
   type: 'url' | 'text'
@@ -25,7 +26,7 @@ export function UrlTextForm({ type, value, onChange }: UrlTextFormProps) {
           value={value.content}
           onChange={e => handleChange(e.target.value)}
           placeholder={t('forms.textPlaceholder')}
-          className="min-h-[140px] resize-y"
+          className={`${inputAccentBase} min-h-[140px] resize-y`}
         />
       </div>
     )
@@ -40,7 +41,7 @@ export function UrlTextForm({ type, value, onChange }: UrlTextFormProps) {
         value={value.content}
         onChange={e => handleChange(e.target.value)}
         placeholder={t('forms.urlPlaceholder')}
-        className="min-h-11"
+        className={inputAccentClassUrl}
       />
     </div>
   )

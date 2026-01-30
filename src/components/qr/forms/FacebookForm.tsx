@@ -1,6 +1,7 @@
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import type { FacebookData } from '@/lib/qrTypes'
+import { inputAccentClass } from './inputStyles'
 
 interface FacebookFormProps {
   value: FacebookData
@@ -16,7 +17,7 @@ export function FacebookForm({ value, onChange }: FacebookFormProps) {
         value={value.username}
         onChange={e => onChange({ ...value, username: e.target.value })}
         placeholder="your-page-or-profile"
-        className="min-h-11"
+        className={inputAccentClass}
       />
     </div>
   )

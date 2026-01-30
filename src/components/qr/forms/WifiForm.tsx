@@ -9,6 +9,7 @@ import {
 } from '@/components/ui/select'
 import { Switch } from '@/components/ui/switch'
 import type { WifiData } from '@/lib/qrTypes'
+import { inputAccentClass, selectTriggerAccentClass } from './inputStyles'
 
 interface WifiFormProps {
   value: WifiData
@@ -29,7 +30,7 @@ export function WifiForm({ value, onChange }: WifiFormProps) {
           value={value.ssid}
           onChange={e => update({ ssid: e.target.value })}
           placeholder="My WiFi Network"
-          className="min-h-11"
+          className={inputAccentClass}
         />
       </div>
       <div className="space-y-2">
@@ -40,7 +41,7 @@ export function WifiForm({ value, onChange }: WifiFormProps) {
           value={value.password ?? ''}
           onChange={e => update({ password: e.target.value })}
           placeholder="••••••••"
-          className="min-h-11"
+          className={inputAccentClass}
         />
       </div>
       <div className="space-y-2">
@@ -49,7 +50,7 @@ export function WifiForm({ value, onChange }: WifiFormProps) {
           value={value.authType}
           onValueChange={authType => update({ authType: authType as WifiData['authType'] })}
         >
-          <SelectTrigger id="wifi-auth-type" className="min-h-11">
+          <SelectTrigger id="wifi-auth-type" className={selectTriggerAccentClass}>
             <SelectValue placeholder="Security type" />
           </SelectTrigger>
           <SelectContent>

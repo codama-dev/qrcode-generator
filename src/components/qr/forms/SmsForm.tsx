@@ -2,6 +2,7 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
 import type { SmsData } from '@/lib/qrTypes'
+import { inputAccentBase, inputAccentClass } from './inputStyles'
 
 interface SmsFormProps {
   value: SmsData
@@ -23,7 +24,7 @@ export function SmsForm({ value, onChange }: SmsFormProps) {
           value={value.number}
           onChange={e => update({ number: e.target.value })}
           placeholder="+1 555 000 0000"
-          className="min-h-11"
+          className={inputAccentClass}
         />
       </div>
       <div className="space-y-2">
@@ -33,7 +34,7 @@ export function SmsForm({ value, onChange }: SmsFormProps) {
           value={value.message ?? ''}
           onChange={e => update({ message: e.target.value })}
           placeholder="Hi! Just scanned your QR code."
-          className="min-h-[100px] resize-y"
+          className={`${inputAccentBase} min-h-[100px] resize-y`}
         />
       </div>
     </div>

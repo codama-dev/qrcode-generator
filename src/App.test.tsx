@@ -5,9 +5,10 @@ import App from './App'
 describe('App routing and layout', () => {
   it('shows the QR generator when visiting /', () => {
     render(<App />)
-    const headings = screen.getAllByRole('heading', { name: /qr code generator/i })
-    expect(headings.length).toBeGreaterThan(0)
-    expect(headings[0]).toBeInTheDocument()
+    // App title and/or hero text contain "QR code generator"
+    const matches = screen.getAllByText(/qr code generator/i)
+    expect(matches.length).toBeGreaterThan(0)
+    expect(matches[0]).toBeInTheDocument()
   })
 
   it('shows generator-focused content (QR type and URL input)', () => {

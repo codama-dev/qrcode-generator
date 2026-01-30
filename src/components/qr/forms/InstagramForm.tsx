@@ -1,6 +1,7 @@
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import type { InstagramData } from '@/lib/qrTypes'
+import { inputAccentClass } from './inputStyles'
 
 interface InstagramFormProps {
   value: InstagramData
@@ -16,7 +17,7 @@ export function InstagramForm({ value, onChange }: InstagramFormProps) {
         value={value.username}
         onChange={e => onChange({ ...value, username: e.target.value })}
         placeholder="your.handle"
-        className="min-h-11"
+        className={inputAccentClass}
       />
     </div>
   )

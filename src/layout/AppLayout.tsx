@@ -42,7 +42,7 @@ function MainNav({ className = '' }: { className?: string }) {
         {t('nav.about')}
       </NavLink>
       <a
-        href="https://codama.dev"
+        href="https://codama.dev/#colophon"
         target="_blank"
         rel="noopener noreferrer"
         className={navLinkClass}
@@ -65,13 +65,15 @@ export function AppLayout({ children }: AppLayoutProps) {
         <div className="flex items-center justify-between gap-3 sm:gap-6">
           <div className="flex min-w-0 flex-1 items-center gap-8">
             <div className="flex min-w-0 flex-1 items-center gap-2 sm:flex-initial sm:gap-3">
-              <img
-                src={logoSvg}
-                alt="Free QR Code Generator"
-                className="size-10 shrink-0 md:size-12"
-                width="48"
-                height="48"
-              />
+              <div className="size-10 shrink-0 p-0.5 md:size-12 md:p-1">
+                <img
+                  src={logoSvg}
+                  alt="Free QR Code Generator"
+                  className="size-full object-contain"
+                  width="48"
+                  height="48"
+                />
+              </div>
               <div className="min-w-0 overflow-hidden">
                 {/* Keep a single <h1> on the page for proper document outline */}
                 <p className="truncate font-semibold text-base text-foreground sm:text-xl">
@@ -159,15 +161,16 @@ export function AppLayout({ children }: AppLayoutProps) {
                   >
                     {t('nav.about')}
                   </NavLink>
-                  <a
-                    href="https://codama.dev"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={closeMobileMenu}
-                    className="flex items-center gap-3 border-transparent border-l-4 px-6 py-3 text-left font-medium text-muted-foreground text-sm transition-colors hover:bg-accent/30 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-inset"
+                  <button
+                    type="button"
+                    onClick={() => {
+                      closeMobileMenu()
+                      window.open('https://codama.dev/#colophon', '_blank', 'noopener,noreferrer')
+                    }}
+                    className="flex w-full items-center gap-3 border-transparent border-l-4 px-6 py-3 text-left font-medium text-muted-foreground text-sm transition-colors hover:bg-accent/30 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-inset"
                   >
                     {t('nav.getAQuote')}
-                  </a>
+                  </button>
                 </nav>
               </SheetContent>
             </Sheet>

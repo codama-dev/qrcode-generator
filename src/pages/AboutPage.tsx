@@ -29,7 +29,7 @@ export function AboutPage() {
         <div className="flex flex-wrap justify-center gap-3">
           <Button asChild size="lg">
             <a
-              href="https://codama.dev"
+              href="https://codama.dev/#colophon"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2"
