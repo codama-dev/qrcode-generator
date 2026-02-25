@@ -173,6 +173,26 @@
     "vertical": "Vertical",
     "horizontal": "Horizontal"
   },
+  "share": {
+    "title": "\u2728 Loving it? Share the love!",
+    "description": "Help others discover this free QR code generator \ud83c\udf89",
+    "message": "\u2728 Check out this free QR code generator \u2014 custom colors, logos, and styles! \ud83d\ude80",
+    "button": "Share \ud83d\udce4",
+    "whatsapp": "WhatsApp",
+    "facebook": "Facebook",
+    "x": "X (Twitter)",
+    "linkedin": "LinkedIn",
+    "email": "Email",
+    "copyLink": "Copy link",
+    "copied": "Copied!",
+    "linkCopied": "Link copied to clipboard \u2705",
+    "copyFailed": "Failed to copy link",
+    "hideAfterDownload": "Don't show this after downloads",
+    "scanOrShare": "Scan to visit \u2022 or share using the buttons below \ud83d\udc47",
+    "shareVia": "\ud83d\udce3 Pick your favorite way to share",
+    "freeForever": "\ud83e\udde1 100% free, forever. Made for the community.",
+    "cardHint": "Help others discover this tool \u2728"
+  },
   "footer": {
     "createdWith": "Created with",
     "freeBy": "100% free for the community by"

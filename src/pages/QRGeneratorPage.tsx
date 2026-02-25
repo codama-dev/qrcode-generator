@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
 import { toast } from 'sonner'
 import type { QRType } from '@/components/qr'
+import { isShareDismissed, ShareModal } from '@/components/qr'
 import { Button } from '@/components/ui/button'
 import { Form } from '@/components/ui/form'
 import { exportAsJpg, exportAsPdf, exportAsPng, exportAsSvg } from '@/lib/qrExport'
@@ -71,6 +72,8 @@ export function QRGeneratorPage() {
   const [exportPngError, setExportPngError] = useState<string | null>(null)
   const [qrType, setQrType] = useState<QRType>('url')
   const [qrTypeData, setQrTypeData] = useState<QRTypeDataMap>(defaultQrTypeData)
+  const [shareModalOpen, setShareModalOpen] = useState(false)
+  const [shareModalIsPostDownload, setShareModalIsPostDownload] = useState(false)
 
   const form = useForm<QRGeneratorFormValues>({
     // Cast resolver/defaults to avoid overly strict generic inference issues in TS build
@@ -143,19 +146,34 @@ export function QRGeneratorPage() {
     }
   }, [centerImageFileUrl])
 
+  const openShareAfterDownload = useCallback(() => {
+    if (!isShareDismissed()) {
+      setShareModalIsPostDownload(true)
+      setShareModalOpen(true)
+    }
+  }, [])
+
+  const handleShareClick = useCallback(() => {
+    setShareModalIsPostDownload(false)
+    setShareModalOpen(true)
+  }, [])
+
   const handleDownloadPng = useCallback(() => {
     if (!qrSvgRef.current || !hasContent) {
       return
     }
     setExportPngError(null)
     exportAsPng(qrSvgRef.current, sizePixels, sizePixels, 'qrcode.png')
-      .then(() => toast.success(t('common.downloadSuccess', { format: 'PNG' })))
+      .then(() => {
+        toast.success(t('common.downloadSuccess', { format: 'PNG' }))
+        openShareAfterDownload()
+      })
       .catch(() => {
         const msg = t('errors.pngExportFailed')
         setExportPngError(msg)
         toast.error(msg)
       })
-  }, [hasContent, sizePixels, t])
+  }, [hasContent, sizePixels, t, openShareAfterDownload])
 
   const handleDownloadJpg = useCallback(() => {
     if (!qrSvgRef.current || !hasContent) {
@@ -163,13 +181,16 @@ export function QRGeneratorPage() {
     }
     setExportPngError(null)
     exportAsJpg(qrSvgRef.current, 'qrcode.jpg', { backgroundColor: bgColor })
-      .then(() => toast.success(t('common.downloadSuccess', { format: 'JPG' })))
+      .then(() => {
+        toast.success(t('common.downloadSuccess', { format: 'JPG' }))
+        openShareAfterDownload()
+      })
       .catch(() => {
         const msg = t('errors.jpgExportFailed')
         setExportPngError(msg)
         toast.error(msg)
       })
-  }, [bgColor, hasContent, t])
+  }, [bgColor, hasContent, t, openShareAfterDownload])
 
   const handleDownloadSvg = useCallback(() => {
     if (!qrSvgRef.current || !hasContent) {
@@ -177,13 +198,16 @@ export function QRGeneratorPage() {
     }
     setExportPngError(null)
     exportAsSvg(qrSvgRef.current, 'qrcode.svg')
-      .then(() => toast.success(t('common.downloadSuccess', { format: 'SVG' })))
+      .then(() => {
+        toast.success(t('common.downloadSuccess', { format: 'SVG' }))
+        openShareAfterDownload()
+      })
       .catch(() => {
         const msg = t('errors.svgExportFailed')
         setExportPngError(msg)
         toast.error(msg)
       })
-  }, [hasContent, t])
+  }, [hasContent, t, openShareAfterDownload])
 
   const handleDownloadPdf = useCallback(() => {
     if (!qrSvgRef.current || !hasContent) {
@@ -193,13 +217,22 @@ export function QRGeneratorPage() {
     const hasGradients =
       (foregroundGradient?.enabled ?? false) || (backgroundGradient?.enabled ?? false)
     exportAsPdf(qrSvgRef.current, 'qrcode.pdf', { hasGradients })
-      .then(() => toast.success(t('common.downloadSuccess', { format: 'PDF' })))
+      .then(() => {
+        toast.success(t('common.downloadSuccess', { format: 'PDF' }))
+        openShareAfterDownload()
+      })
       .catch(() => {
         const msg = t('errors.pdfExportFailed')
         setExportPngError(msg)
         toast.error(msg)
       })
-  }, [hasContent, foregroundGradient?.enabled, backgroundGradient?.enabled, t])
+  }, [
+    hasContent,
+    foregroundGradient?.enabled,
+    backgroundGradient?.enabled,
+    t,
+    openShareAfterDownload,
+  ])
 
   const onSubmit = useCallback((_values: QRGeneratorFormValues) => {
     // QR preview updates live via form.watch; submit primarily triggers validation
@@ -313,10 +346,17 @@ export function QRGeneratorPage() {
               handleDownloadSvg={handleDownloadSvg}
               handleDownloadPdf={handleDownloadPdf}
               onImageLoadError={() => setCenterImageLoadError(t('errors.imageLoadFailed'))}
+              onShareClick={handleShareClick}
             />
           </div>
         </form>
       </Form>
+
+      <ShareModal
+        open={shareModalOpen}
+        onOpenChange={setShareModalOpen}
+        showDismissOption={shareModalIsPostDownload}
+      />
 
       <FloatingQRPreview
         content={content}

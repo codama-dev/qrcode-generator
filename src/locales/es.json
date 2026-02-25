@@ -173,6 +173,26 @@
     "vertical": "Vertical",
     "horizontal": "Horizontal"
   },
+  "share": {
+    "title": "\u2728 \u00bfTe encanta? \u00a1Comp\u00e1rtelo!",
+    "description": "Ayuda a otros a descubrir este generador de c\u00f3digos QR gratuito \ud83c\udf89",
+    "message": "\u2728 Mira este generador de c\u00f3digos QR gratuito \u2014 colores, logos y estilos personalizados! \ud83d\ude80",
+    "button": "Compartir \ud83d\udce4",
+    "whatsapp": "WhatsApp",
+    "facebook": "Facebook",
+    "x": "X (Twitter)",
+    "linkedin": "LinkedIn",
+    "email": "Email",
+    "copyLink": "Copiar enlace",
+    "copied": "\u00a1Copiado!",
+    "linkCopied": "Enlace copiado al portapapeles \u2705",
+    "copyFailed": "No se pudo copiar el enlace",
+    "hideAfterDownload": "No mostrar despu\u00e9s de descargar",
+    "scanOrShare": "Escanea para visitar \u2022 o comparte con los botones de abajo \ud83d\udc47",
+    "shareVia": "\ud83d\udce3 Elige tu forma favorita de compartir",
+    "freeForever": "\ud83e\udde1 100% gratis, para siempre. Hecho para la comunidad.",
+    "cardHint": "Ayuda a otros a descubrir esta herramienta \u2728"
+  },
   "footer": {
     "createdWith": "Creado con",
     "freeBy": "100 % gratis para la comunidad por"

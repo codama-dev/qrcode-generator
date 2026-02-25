@@ -1,4 +1,4 @@
-import { Download, Eye, FileImage, FileText } from 'lucide-react'
+import { Download, Eye, FileImage, FileText, Share2 } from 'lucide-react'
 import type { RefObject } from 'react'
 import { useTranslation } from 'react-i18next'
 import { StyledQRCode } from '@/components/qr'
@@ -36,6 +36,7 @@ interface PreviewPanelProps {
   handleDownloadSvg: () => void
   handleDownloadPdf: () => void
   onImageLoadError: () => void
+  onShareClick: () => void
 }
 
 export function PreviewPanel({
@@ -62,6 +63,7 @@ export function PreviewPanel({
   handleDownloadSvg,
   handleDownloadPdf,
   onImageLoadError,
+  onShareClick,
 }: PreviewPanelProps) {
   const { t } = useTranslation()
   const hasContent = content.trim().length > 0
@@ -256,6 +258,32 @@ export function PreviewPanel({
             </div>
           </dl>
         </CardContent>
+      </Card>
+
+      <Card className="mt-3 overflow-hidden rounded-xl border border-border/70 shadow-md md:min-w-0">
+        <button
+          type="button"
+          onClick={onShareClick}
+          className="group relative flex w-full items-center gap-3 px-4 py-3 text-left transition-all duration-200 hover:shadow-lg"
+        >
+          <div
+            className="absolute inset-0 bg-linear-to-r from-orange-500/5 to-amber-400/5 transition-opacity duration-200 group-hover:from-orange-500/10 group-hover:to-amber-400/10"
+            aria-hidden="true"
+          />
+          <div className="relative flex size-9 shrink-0 items-center justify-center rounded-full bg-linear-to-br from-orange-500 to-amber-400 text-white shadow-md shadow-orange-500/20 transition-transform duration-200 group-hover:scale-110">
+            <Share2 className="size-4" aria-hidden="true" />
+          </div>
+          <div className="relative min-w-0 flex-1">
+            <p className="truncate font-semibold text-sm">{t('share.button')}</p>
+            <p className="truncate text-muted-foreground text-xs">{t('share.cardHint')}</p>
+          </div>
+          <span
+            className="relative text-lg text-muted-foreground transition-transform duration-200 group-hover:translate-x-0.5"
+            aria-hidden="true"
+          >
+            &rsaquo;
+          </span>
+        </button>
       </Card>
     </aside>
   )
