@@ -1,27 +1,65 @@
+import { ExternalLink } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
+
+/**
+ * More Free Tools by Codama - cross-links between all tools.
+ *
+ * UPDATE THIS LIST as new tools are deployed.
+ * Remove the current tool from the list (don't link to yourself).
+ */
+const FREE_TOOLS = [
+  { name: 'JSON Formatter & Validator', url: 'https://free-json-formatter.codama.dev/' },
+  { name: 'Base64 Encoder & Decoder', url: 'https://free-base64.codama.dev/' },
+]
 
 export function PageFooter() {
   const { t } = useTranslation()
   return (
-    <footer className="border-border border-t bg-background px-6 py-4">
-      <p className="flex flex-wrap items-center justify-center gap-x-1.5 gap-y-1 text-base text-muted-foreground">
-        <span>{t('footer.createdWith')}</span>
-        <span className="text-red-500" aria-hidden>
-          ♥
-        </span>
-        <span>{t('footer.freeBy')}</span>
-        <a
-          href="https://codama.dev"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="ms-2.5 inline-flex items-center rounded transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-          aria-label="codama.dev"
-        >
-          <span className="text-foreground">
-            <CodamaLogo className="h-7 w-auto" />
+    <footer className="border-border border-t bg-background">
+      {/* More Free Tools section */}
+      {FREE_TOOLS.length > 0 && (
+        <div className="border-border border-b px-6 py-5">
+          <p className="mb-3 text-center font-semibold text-muted-foreground text-sm">
+            {t('footer.moreTools')}
+          </p>
+          <div className="flex flex-wrap justify-center gap-3">
+            {FREE_TOOLS.map(tool => (
+              <a
+                key={tool.url}
+                href={tool.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-full border bg-card px-4 py-1.5 font-medium text-foreground text-sm transition-colors hover:bg-accent/50"
+              >
+                {tool.name}
+                <ExternalLink className="size-3.5 text-muted-foreground" aria-hidden />
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Codama branding */}
+      <div className="px-6 py-4">
+        <p className="flex flex-wrap items-center justify-center gap-x-1.5 gap-y-1 text-base text-muted-foreground">
+          <span>{t('footer.createdWith')}</span>
+          <span className="text-red-500" aria-hidden>
+            ♥
           </span>
-        </a>
-      </p>
+          <span>{t('footer.freeBy')}</span>
+          <a
+            href="https://codama.dev"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ms-2.5 inline-flex items-center rounded transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            aria-label="codama.dev"
+          >
+            <span className="text-foreground">
+              <CodamaLogo className="h-7 w-auto" />
+            </span>
+          </a>
+        </p>
+      </div>
     </footer>
   )
 }
