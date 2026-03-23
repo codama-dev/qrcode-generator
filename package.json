@@ -9,7 +9,7 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "biome lint .",
-    "preview": "vite preview",
+    "preview": "pnpm run build && wrangler dev",
     "test": "vitest run",
     "test:watch": "vitest",
     "coverage": "vitest run --coverage",
@@ -20,7 +20,8 @@
     "spell": "cspell \"**/*.{ts,tsx,js,jsx,md,txt,html,css,scss,less}\" --no-progress --show-context --show-suggestions",
     "spell:check": "cspell \"**/*.{ts,tsx,js,jsx,md,txt,html,css,scss,less}\" --no-progress",
     "spell:staged": "cspell --no-progress --show-context",
-    "prepare": "husky"
+    "prepare": "husky",
+    "deploy": "pnpm run build && wrangler deploy"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
@@ -65,6 +66,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^2.3.13",
+    "@cloudflare/vite-plugin": "^1.30.0",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
     "@testing-library/user-event": "^14.6.1",
@@ -84,7 +86,8 @@
     "typescript": "~5.9.3",
     "vite": "^7.3.1",
     "vitest": "^4.0.18",
-    "whatwg-fetch": "^3.6.20"
+    "whatwg-fetch": "^3.6.20",
+    "wrangler": "^4.76.0"
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx,json,css,md}": [
